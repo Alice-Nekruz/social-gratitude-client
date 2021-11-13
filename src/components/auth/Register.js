@@ -6,19 +6,17 @@ class Register extends React.Component {
 
     state = {
         username: '',
-        mail: '',
         password: ''
     }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        const { username, mail, password } = this.state;
+        const { username, password } = this.state;
 
-        authService.register(username, mail, password)
+        authService.register(username, password)
             .then(createdUser => {
                 this.setState({
                     username: "",
-                    mail: '',
                     password: "",
                 });
                 // this.props.getUser(response, true);
@@ -42,16 +40,6 @@ class Register extends React.Component {
                             type="text"
                             name="username"
                             value={this.state.username}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-
-                    <label>
-                        Mail:
-                        <input
-                            type="text"
-                            name="mail"
-                            value={this.state.mail}
                             onChange={this.handleChange}
                         />
                     </label>

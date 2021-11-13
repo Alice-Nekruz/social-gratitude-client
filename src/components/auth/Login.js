@@ -13,7 +13,7 @@ class Login extends Component {
             .login(username, password)
             .then(response => {
                 this.setState({ username: '', password: '' });
-                this.props.getUser(response, true);
+                //this.props.getUser(response, true);
             })
             .catch(error => console.log(error));
     };

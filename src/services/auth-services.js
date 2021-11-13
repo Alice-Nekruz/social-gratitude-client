@@ -9,8 +9,8 @@ class AuthService {
     }
 
 
-    register = (username, mail, password) => {
-        return this.service.post('/register', { username, mail, password }).then(response => response.data);
+    register = (username, password) => {
+        return this.service.post('/register', { username, password }).then(response => response.data);
     };
 
 
