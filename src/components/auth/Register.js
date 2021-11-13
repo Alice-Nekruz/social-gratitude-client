@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import authService from "../../services/auth-services";
 
-class Signup extends Component {
+class Register extends React.Component {
 
     state = { username: '', password: '' }
 
@@ -10,7 +10,7 @@ class Signup extends Component {
         event.preventDefault();
         const { username, password } = this.state;
 
-        authService.signup(username, password)
+        authService.register(username, password)
             .then(createdUser => {
                 this.setState({
                     username: "",
@@ -51,7 +51,7 @@ class Signup extends Component {
                         />
                     </label>
 
-                    <button type="submit"> Signup </button>
+                    <button type="submit"> Register </button>
                 </form>
 
                 <p>
@@ -65,4 +65,4 @@ class Signup extends Component {
 
 }
 
-export default Signup;
+export default Register;
