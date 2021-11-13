@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import authService from '../../services/auth-services';
 import { Link } from 'react-router-dom';
 
-class Login extends Component {
+export default class Login extends Component {
     state = { username: '', password: '' };
 
     handleFormSubmit = event => {
@@ -49,5 +49,3 @@ class Login extends Component {
         );
     }
 }
-
-export default Login;
