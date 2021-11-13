@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import AddCall from '../call/AddCall'
 
@@ -21,6 +21,7 @@ class Profile extends Component {
 
     getSingleProfile(){
         const { params } = this.props.match;
+        console.log(params)
         // const profileID = '618fc4424fe506616bc6f21f';
 
         axios.get(`http://localhost:3014/api/my-profile/${params.id}`, { withCredentials: true })

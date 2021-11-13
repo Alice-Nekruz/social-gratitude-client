@@ -17,7 +17,7 @@ export default class App extends React.Component {
           <Route exact path="/" render={props => <Login {...props} getUser={this.getTheUser} />} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/posts" component={PostList}/>
-          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/profile/:id" component={Profile}/>
         </Switch>
         <Link to={'/posts'}> Posts</Link>
       </div>
