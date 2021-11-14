@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import AddPost from './AddPost'; // <== !!!
-import Profile from '../profile/Profile'; // <== !!!
 
 class PostList extends Component {
   state = { listOfPosts: [] }
@@ -22,9 +21,13 @@ class PostList extends Component {
     this.getAllPosts();
   }
 
+
   render(){
+    console.log(this.props.getCurrentUser)
     return(
       <div>
+        <h1>hello</h1>
+        
         <div style={{width: '60%', float:"left"}}>
           { this.state.listOfPosts.map( posts => {
             return (
@@ -39,8 +42,7 @@ class PostList extends Component {
         <div style={{width: '40%', float:"right"}}>
             <AddPost getData={() => this.getAllPosts()}/>
         </div>
-        <Link to={'/'}>Login</Link>
-        <div><Link to={'/profile'}>My Profile</Link></div>
+        <div><Link to={'/my-profile/'}>My Profile</Link></div>
       </div>
     )
   }

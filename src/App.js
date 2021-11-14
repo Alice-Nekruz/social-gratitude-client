@@ -26,6 +26,7 @@ export default class App extends React.Component {
   };
 
   render() {
+    
     return (
       <div className="App">
         <Navbar userData={this.state.user} isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser} />
@@ -33,7 +34,7 @@ export default class App extends React.Component {
           <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/posts" component={PostList}/>
-          <Route exact path="/profile/:id" component={Profile}/>
+          <Route exact path="/my-profile/:id" render={props => <Profile {...props} getCurrentUser={this.getCurrentUser} />} />
         </Switch>
         
           <Link to={'/posts'}> Posts</Link>

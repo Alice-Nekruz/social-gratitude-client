@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import authService from '../../services/auth-services';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import { Route } from 'react-router';
 
 export default class Login extends Component {
-    state = { username: '', password: '' };
+    constructor() {
+        super()
+        this.state = { username: '', password: '', isSubmitted: false };
+    }
 
     handleFormSubmit = event => {
         event.preventDefault();
         const { username, password } = this.state;
+
+        this.setState({isSubmitted: true})
 
         authService
             .login(username, password)
@@ -40,6 +47,7 @@ export default class Login extends Component {
 
                     <button type="submit"> Login </button>
                 </form>
+                {this.state.isSubmitted && <Redirect to="/posts"/>}
 
                 <p>
                     Don't have account?

@@ -16,12 +16,7 @@ export default class Navbar extends Component {
             return (
                 <nav className="nav-style">
                     <ul>
-                        {isLoggedIn && <li>Welcome, {userData.username}</li>}
-                        {/* <li>
-                            <Link to="/projects" style={{ textDecoration: 'none' }}>
-                                Projects
-                            </Link>
-                        </li> */}
+                        <li>Welcome, {userData.username}</li>
                         <li>
                             <Link to="/">
                                 <button onClick={() => this.logoutUser()}>Logout</button>
