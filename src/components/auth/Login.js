@@ -13,7 +13,7 @@ export default class Login extends Component {
             .login(username, password)
             .then(response => {
                 this.setState({ username: '', password: '' });
-                //this.props.getUser(response, true);
+                this.props.getCurrentUser(response, true);
             })
             .catch(error => console.log(error));
     };
