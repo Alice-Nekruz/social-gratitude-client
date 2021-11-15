@@ -5,19 +5,22 @@ class AddCall extends Component {
   state = { 
     topic: "", 
     date: "", 
-    amountOfTime: "", 
-    isShowing: false }
+    amountOfTime: "",
+    toWhom: ""
+  }
+
    
   handleFormSubmit = (event) => {
     event.preventDefault();
     const topic = this.state.topic;
     const date = this.state.date;
     const amountOfTime = this.state.amountOfTime;
-    const owner = this.props.userDetails._id;
+    const toWhom = this.props.userDetails;
 
-    axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, owner }, {withCredentials: true})
+
+    axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, toWhom }, {withCredentials: true})
     .then( () => {
-        this.props.getTheCall();
+        this.props.refreshProfile();
         this.setState({topic: "", date: "", amountOfTime: ""});
     })
     .catch( error => console.log(error) )
@@ -28,32 +31,6 @@ class AddCall extends Component {
       this.setState({[name]: value});
   }
 
-  toggleForm = () => {
-      if(!this.state.isShowing){
-          this.setState({isShowing: true});
-      } else {
-        this.setState({isShowing: false});
-      }
-  }
-
-  showAddCallForm = () => {
-    if(this.state.isShowing){
-        return(
-            <div>
-                  <h3>Add</h3>
-                  <form onSubmit={this.handleFormSubmit}>
-                    <label>Topic:</label>
-                    <input type="text" name="topic" value={this.state.topic} onChange={ e => this.handleChange(e)}/>
-                    <label>Date:</label>
-                    <input type="date" name="date" value={this.state.date} onChange={ e => this.handleChange(e)} />
-                    <label>amountOfTime:</label>
-                    <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={ e => this.handleChange(e)} />
-                    <input type="submit" value="Submit" />
-                  </form>
-            </div>
-          )
-    }
-  }
 
   render(){
     return(

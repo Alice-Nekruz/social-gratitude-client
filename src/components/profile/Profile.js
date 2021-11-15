@@ -23,7 +23,7 @@ class Profile extends React.Component {
     }
 
     renderAddCallForm = () => {
-        return <AddCall userDetails={this.state} getTheCall={this.getSingleProfile} />
+        return <AddCall userDetails={this.state} refreshProfile={this.getSingleProfile} />
         }
 
     render() {
