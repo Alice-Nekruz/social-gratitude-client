@@ -11,7 +11,7 @@ class PostList extends Component {
     this.state = {
       listOfPosts: [],
       // userId: this.props
-  }
+    }
   }
 
 

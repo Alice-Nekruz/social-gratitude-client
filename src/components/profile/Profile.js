@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import AddCall from '../call/AddCall'
+import ListOfCalls from '../call/listOfCalls'
 
 
 class Profile extends React.Component {
@@ -22,9 +23,15 @@ class Profile extends React.Component {
         })
     }
 
+
     renderAddCallForm = () => {
         return <AddCall userDetails={this.state} refreshProfile={this.getSingleProfile} />
         }
+
+    renderListOfCall = () => {
+        return <ListOfCalls userDetails={this.state._id}/>
+    }
+
 
     render() {
         console.log(this.state)
@@ -33,15 +40,11 @@ class Profile extends React.Component {
                 <h1>This is the profile off..</h1>
                 <h1>{this.state.username}</h1>
                 <div>{this.renderAddCallForm()} </div>
+                <div>{this.renderListOfCall()} </div>
             </div>
         )
     }
     }
-
-
-
-
-
 
 
 export default Profile
