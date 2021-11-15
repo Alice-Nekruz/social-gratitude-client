@@ -16,7 +16,7 @@ class PostList extends Component {
 
 
   getAllPosts = () =>{
-    axios.get(`http://localhost:3014/api/posts`)
+    axios.get(`http://localhost:3014/api/posts`, {withCredentials: true})
     .then(responseFromApi => {
       this.setState({
         listOfPosts: responseFromApi.data

@@ -15,7 +15,7 @@ class AddCall extends Component {
     const amountOfTime = this.state.amountOfTime;
     const owner = this.props.userDetails._id;
 
-    axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, owner })
+    axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, owner }, {withCredentials: true})
     .then( () => {
         this.props.getTheCall();
         this.setState({topic: "", date: "", amountOfTime: ""});

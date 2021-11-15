@@ -10,7 +10,7 @@ class AddPost extends Component {
     const title = this.state.title;
     const text = this.state.text;
 
-    axios.post("http://localhost:3014/api/create-post", { title, text })
+    axios.post("http://localhost:3014/api/create-post", { title, text }, {withCredentials: true})
     .then( () => {
         this.props.getData();
         this.setState({title: "", text: ""});
