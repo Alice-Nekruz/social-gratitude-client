@@ -30,9 +30,11 @@ class ListOfCalls extends Component {
                     if(calls.owner === this.props.userDetails){
 
                         return (
-                            <div key={calls._id}>
-                                <h3>{calls.topic}</h3> 
-                                <p>{calls._id}</p> 
+                            <div className="callContainer">
+                                <div key={calls._id}>
+                                    <h3>{calls.topic}</h3> 
+                                    <p>{calls._id}</p> 
+                                </div>
                             </div>
                         )
                     } else {
