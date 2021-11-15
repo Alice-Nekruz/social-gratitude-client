@@ -7,6 +7,7 @@ import Navbar from './components/auth/navbar/Navbar';
 import PostList from './components/post/PostList';
 import Profile from './components/profile/Profile';
 import CallDetails from './components/call/Calldetails';
+import authService from './services/auth-services'
 
 
 
