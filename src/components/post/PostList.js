@@ -23,7 +23,6 @@ class PostList extends Component {
 
 
   render(){
-    console.log(this.props.getCurrentUser)
     return(
       <div>
         <h1>hello</h1>
@@ -32,9 +31,8 @@ class PostList extends Component {
           { this.state.listOfPosts.map( posts => {
             return (
               <div key={posts._id}>
-                {/* <Link to={`/posts/${posts._id}`}> */}
                   <h3>{posts.title}</h3>
-                {/* </Link> */}
+                  <p>{posts.text}</p>
               </div>
             )})
           }
@@ -42,7 +40,7 @@ class PostList extends Component {
         <div style={{width: '40%', float:"right"}}>
             <AddPost getData={() => this.getAllPosts()}/>
         </div>
-        <div><Link to={'/my-profile/'}>My Profile</Link></div>
+        <div><Link to={'/my-profile/:id'}>My Profile</Link></div>
       </div>
     )
   }

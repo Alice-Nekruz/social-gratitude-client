@@ -25,7 +25,39 @@ export default class App extends React.Component {
     });
   };
 
+  fetchUser = () => {
+    if (this.state.user === null) {
+      authService
+        .loggedin()
+        .then(data => {
+          if(data){
+            this.setState({
+              user: data,
+              isLoggedIn: true
+            });
+          } else {
+            this.setState({
+              user: null,
+              isLoggedIn: false
+            });
+          }
+        })
+        .catch(err => {
+          this.setState({
+            user: null,
+            isLoggedIn: false
+          });
+        });
+    }
+  };
+
+
+  componentDidMount() {
+    this.fetchUser();
+  }
+
   render() {
+
     
     return (
       <div className="App">

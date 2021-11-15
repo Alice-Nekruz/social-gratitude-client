@@ -27,16 +27,16 @@ class Profile extends React.Component {
         })
     }
 
-    renderAddCallForm = () => {
-        return <AddCall userDetails={this.state} getTheCall={this.getSingleProfile} />
-        }
+    // renderAddCallForm = () => {
+    //     return <AddCall userDetails={this.state} getTheCall={this.getSingleProfile} />
+    //     }
 
     render() {
         console.log(this.state)
         return (
             <div>
                 <h1>{this.state.username}</h1>
-                <div>{this.renderAddCallForm()} </div>
+                {/* <div>{this.renderAddCallForm()} </div> */}
             </div>
         )
     }
