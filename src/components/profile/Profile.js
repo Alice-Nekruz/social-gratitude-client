@@ -6,11 +6,6 @@ import AddCall from '../call/AddCall'
 class Profile extends React.Component {
     state = {}
 
-    // state = {
-    //     username: '',
-    //     password: '',
-    // }
-
     componentDidMount() {
         this.getSingleProfile()
     }
@@ -37,6 +32,9 @@ class Profile extends React.Component {
             <div>
                 <h1>{this.state.username}</h1>
                 {/* <div>{this.renderAddCallForm()} </div> */}
+                <p>{this.state.password}</p>
+                <p>{this.state._id}</p>
+                <div>{this.renderAddTaskForm()} </div>
             </div>
         )
     }

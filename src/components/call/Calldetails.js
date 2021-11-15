@@ -14,7 +14,7 @@ class CallDetails
 
   getTheCall = () => {
     const { params } = this.props.match;
-    axios.get(`http://localhost:3014/api/call-details/${params.callid}/tasks/${params.CallId}`)
+    axios.get(`http://localhost:3014/api/call-details/${params.callid}/tasks/${params.callid}`)
     .then( responseFromApi =>{
       const theCall = responseFromApi.data;
       this.setState(theCall);
