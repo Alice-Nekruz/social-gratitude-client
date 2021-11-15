@@ -32,7 +32,7 @@ class PostList extends Component {
   render(){
     return(
       <div>
-        <h1>hello</h1>
+        <h1>Gratitude feed</h1>
         
         <div style={{width: '60%', float:"left"}}>
           { this.state.listOfPosts.map( posts => {

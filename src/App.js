@@ -71,7 +71,7 @@ export default class App extends React.Component {
           <Route exact path="/profile/:id/calldetails/:callid" component={CallDetails}/>
         </Switch>
         
-          <Link to={'/posts'}> Posts</Link>
+          
         
         
       </div>

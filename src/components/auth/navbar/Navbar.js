@@ -22,6 +22,7 @@ export default class Navbar extends Component {
                                 <button onClick={() => this.logoutUser()}>Logout</button>
                             </Link>
                         </li>
+                        <li><Link to={'/posts'}> Posts</Link></li>
                     </ul>
                 </nav>
             );
