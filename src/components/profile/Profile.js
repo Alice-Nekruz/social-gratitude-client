@@ -1,13 +1,9 @@
-
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
-
 import AddCall from '../call/AddCall'
 
 
-class Profile extends Component {
-    
+class Profile extends React.Component {
     state = {}
 
     componentDidMount() {
@@ -15,42 +11,38 @@ class Profile extends Component {
     }
 
     getSingleProfile(){
-        // const theID = this.props.match.params.id;
-        // console.log(theID)
-        axios.get(`http://localhost:3014/api/my-profile`, { withCredentials: true })
+        const { params } = this.props.match;
+        axios.get(`http://localhost:3014/api/my-profile/${params.id}`, { withCredentials: true })
         .then(responseFromApi => {
-            const theProfile = responseFromApi.data;
-            console.log("----->>>",responseFromApi.data)
-            this.setState(theProfile);
+            const usersProfile = responseFromApi.data;
+            this.setState(usersProfile);
         })
         .catch((err) => {
             console.log(err)
         })
     }
 
-    renderAddTaskForm = () => {
-        if (!this.state.username) {
-            // this.getSingleProfile();
-        } else {
-            // pass the project and method getSingleProject() as a props down to AddTask component
-            return <AddCall theCall={this.state} getTheCall={this.getSingleProfile} />
+    renderAddCallForm = () => {
+        return <AddCall userDetails={this.state} getTheCall={this.getSingleProfile} />
         }
-    }
 
-
-    render(){
-        return(
+    render() {
+        console.log(this.state)
+        return (
             <div>
                 <h1>{this.state.username}</h1>
                 <p>{this.state.password}</p>
                 <p>{this.state._id}</p>
                 <div>{this.renderAddTaskForm()} </div>
-
-
             </div>
         )
     }
+    }
 
-}
+
+
+
+
+
 
 export default Profile

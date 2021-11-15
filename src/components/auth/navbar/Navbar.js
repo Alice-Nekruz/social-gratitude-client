@@ -5,23 +5,18 @@ import authService from '../../../services/auth-services';
 export default class Navbar extends Component {
     logoutUser = () => {
         authService.logout().then(() => {
-            this.props.getUser(null, false);
+            this.props.getCurrentUser(null, false);
         });
     };
 
     render() {
-        const { userIsLoggedIn, userData } = this.props;
+        const { isLoggedIn, userData } = this.props;
 
-        if (userIsLoggedIn) {
+        if (isLoggedIn) {
             return (
                 <nav className="nav-style">
                     <ul>
-                        {userIsLoggedIn && <li>Welcome, {userData.username}</li>}
-                        {/* <li>
-                            <Link to="/projects" style={{ textDecoration: 'none' }}>
-                                Projects
-                            </Link>
-                        </li> */}
+                        <li>Welcome, {userData.username}</li>
                         <li>
                             <Link to="/">
                                 <button onClick={() => this.logoutUser()}>Logout</button>

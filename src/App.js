@@ -13,18 +13,35 @@ import CallDetails from './components/call/Calldetails';
 import { Link } from 'react-router-dom';
 
 export default class App extends React.Component {
+
+  state = {
+    isLoggedIn: false,
+    user:null
+  };
+
+  getCurrentUser = (userObj, loggedIn) => {
+    this.setState({
+      isLoggedIn: loggedIn,
+      user: userObj
+    });
+  };
+
   render() {
+    
     return (
       <div className="App">
-        <Navbar/>
+        <Navbar userData={this.state.user} isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser} />
         <Switch>
-          <Route exact path="/" render={props => <Login {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/posts" component={PostList}/>
           <Route exact path="/my-profile" component={Profile}/>
           <Route exact path="/profile/:id/calldetails/:callid" component={CallDetails}/>
         </Switch>
-        <Link to={'/posts'}> Posts</Link>
+        
+          <Link to={'/posts'}> Posts</Link>
+        
+        
       </div>
     );
   }
