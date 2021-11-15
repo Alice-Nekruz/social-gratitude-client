@@ -14,16 +14,9 @@ class AddCall extends Component {
     const date = this.state.date;
     const amountOfTime = this.state.amountOfTime;
     const owner = this.props.userDetails._id;
-    //const owner = this.props.theProject._id; // <== we need to know to which project the created task belong, so we need to get its 'id'
-                                                // it has to be the 'id' because we are referencing project 
-                                                // by its id in the task model on the server side ( project: {type: Schema.Types.ObjectId, ref: 'Project'})
-    
-    // { title, description, projectID } => this is 'req.body' that will be received on the server side in this route, 
-    // so the names have to match
+
     axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, owner })
     .then( () => {
-          // after submitting the form, retrieve project one more time so the new task is displayed as well 
-          //              |
         this.props.getTheCall();
         this.setState({topic: "", date: "", amountOfTime: ""});
     })
@@ -47,7 +40,7 @@ class AddCall extends Component {
     if(this.state.isShowing){
         return(
             <div>
-                  <h3>Add Task</h3>
+                  <h3>Add</h3>
                   <form onSubmit={this.handleFormSubmit}>
                     <label>Topic:</label>
                     <input type="text" name="topic" value={this.state.topic} onChange={ e => this.handleChange(e)}/>
@@ -65,9 +58,16 @@ class AddCall extends Component {
   render(){
     return(
       <div>
-            <hr />
-            <button onClick={() => this.toggleForm()}> Add task </button>
-            { this.showAddCallForm() }
+        <h3>Add Call</h3>
+        <form onSubmit={this.handleFormSubmit}>
+          <label>Topic:</label>
+          <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />
+          <label>Date:</label>
+          <input type="date" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
+          <label>amountOfTime:</label>
+          <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     )
   }
