@@ -30,11 +30,12 @@ class Profile extends React.Component {
         console.log(this.state)
         return (
             <div>
+                <h1>this is the profile</h1>
                 <h1>{this.state.username}</h1>
                 {/* <div>{this.renderAddCallForm()} </div> */}
                 <p>{this.state.password}</p>
                 <p>{this.state._id}</p>
-                <div>{this.renderAddTaskForm()} </div>
+                {/* <div>{this.renderAddTaskForm()} </div> */}
             </div>
         )
     }
