@@ -47,7 +47,7 @@ class PostList extends Component {
         <div style={{width: '40%', float:"right"}}>
             <AddPost getData={() => this.getAllPosts()}/>
         </div>
-        <div><Link to={`/my-profile/${this.props.getUser._id}`}>My Profile</Link></div>
+        <div><Link to={`/my-profile/${this.props.getUser?._id}`}>My Profile</Link></div> 
       </div>
     )
   }
