@@ -12,7 +12,7 @@ class AddPost extends Component {
 
     axios.post("http://localhost:3014/api/create-post", { title, text })
     .then( () => {
-        // this.props.getData();
+        this.props.getData();
         this.setState({title: "", text: ""});
     })
     .catch( error => console.log(error.response.data) )
