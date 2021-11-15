@@ -7,6 +7,7 @@ import Navbar from './components/auth/navbar/Navbar';
 import PostList from './components/post/PostList';
 import Profile from './components/profile/Profile';
 import CallDetails from './components/call/Calldetails';
+import authService from './services/auth-services';
 
 
 
@@ -58,7 +59,6 @@ export default class App extends React.Component {
   }
 
   render() {
-
     
     return (
       <div className="App">
@@ -66,7 +66,7 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/posts" component={PostList}/>
+          <Route exact path="/posts" render={props => <PostList getUser={this.state.user}/>}/>
           <Route exact path="/my-profile" component={Profile}/>
           <Route exact path="/profile/:id/calldetails/:callid" component={CallDetails}/>
         </Switch>
