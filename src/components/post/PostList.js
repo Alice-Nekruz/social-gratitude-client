@@ -42,6 +42,7 @@ class PostList extends Component {
             { this.state.listOfPosts.map( posts => {
                 return (
                 <div key={posts._id}>
+                    <Link to={`/my-profile/${posts._id}`}>My Profile</Link>
                     <h3>{posts.title}</h3>
                     <p>{posts.text}</p>
                 </div>
