@@ -21,6 +21,7 @@ class AddCall extends Component {
     axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, toWhom }, {withCredentials: true})
     .then( () => {
         this.props.refreshProfile();
+        this.props.refreshListOfCalls();
         this.setState({topic: "", date: "", amountOfTime: ""});
     })
     .catch( error => console.log(error) )

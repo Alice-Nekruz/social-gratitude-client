@@ -4,29 +4,29 @@ import axios from 'axios';
 
 
 class ListOfCalls extends Component {
-    state = {
-        listOfCalls: []
-    }
+    // state = {
+    //     listOfCalls: []
+    // }
 
-    getListOfCall = () => {
-        axios.get(`http://localhost:3014/api/call-list`, {withCredentials: true})
-        .then((dataFromDB)=>{
-            console.log(dataFromDB.data)
-            this.setState({listOfCalls: dataFromDB.data})
-          }
-        )
-    }
+    // getListOfCall = () => {
+    //     axios.get(`http://localhost:3014/api/call-list`, {withCredentials: true})
+    //     .then((dataFromDB)=>{
+    //         console.log(dataFromDB.data)
+    //         this.setState({listOfCalls: dataFromDB.data})
+    //       }
+    //     )
+    // }
 
-    componentDidMount() {
-        this.getListOfCall();
-      }
+    // componentDidMount() {
+    //     this.getListOfCall();
+    //   }
 
     render() {
         return (
             <div>
                 <h1>Hellow</h1>
                 
-                {this.state.listOfCalls.map(calls => { 
+                {this.props.listOfCallsFromState.map(calls => { 
                     if(calls.owner === this.props.userDetails){
 
                         return (

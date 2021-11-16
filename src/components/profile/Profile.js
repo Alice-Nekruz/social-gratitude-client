@@ -5,10 +5,14 @@ import ListOfCalls from '../call/listOfCalls'
 
 
 class Profile extends React.Component {
-    state = {}
+    state = {
+        user: {},
+        listOfCalls: []
+    }
 
     componentDidMount() {
         this.getSingleProfile()
+        this.getListOfCall();
     }
 
     getSingleProfile(){
@@ -16,20 +20,29 @@ class Profile extends React.Component {
         axios.get(`http://localhost:3014/api/my-profile/${params.id}`, { withCredentials: true })
         .then(responseFromApi => {
             const usersProfile = responseFromApi.data;
-            this.setState(usersProfile);
+            this.setState({user: usersProfile});
         })
         .catch((err) => {
             console.log(err)
         })
     }
 
+    getListOfCall = () => {
+        axios.get(`http://localhost:3014/api/call-list`, {withCredentials: true})
+        .then((dataFromDB)=>{
+            console.log(dataFromDB.data)
+            this.setState({listOfCalls: dataFromDB.data})
+          }
+        )
+    }
+
 
     renderAddCallForm = () => {
-        return <AddCall userDetails={this.state} refreshProfile={this.getSingleProfile} />
+        return <AddCall userDetails={this.state.user} refreshProfile={()=>this.getSingleProfile()} refreshListOfCalls={()=>this.getListOfCall()}/>
         }
 
     renderListOfCall = () => {
-        return <ListOfCalls userDetails={this.state._id}/>
+        return <ListOfCalls userDetails={this.state.user._id} listOfCallsFromState={this.state.listOfCalls}/>
     }
 
 
@@ -38,7 +51,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <h1>This is the profile off..</h1>
-                <h1>{this.state.username}</h1>
+                <h1>{this.state.user.username}</h1>
                 <div>{this.renderAddCallForm()} </div>
                 <div>{this.renderListOfCall()} </div>
             </div>
