@@ -1,0 +1,8 @@
+
+.nav-style{
+    background-color: yellow;
+    display: flex;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+  }
