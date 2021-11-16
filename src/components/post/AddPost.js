@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import './style/postList.css';
+
 
 class AddPost extends Component {
   state = { title: "", text: "" }
@@ -10,7 +12,7 @@ class AddPost extends Component {
     const title = this.state.title;
     const text = this.state.text;
 
-    axios.post("http://localhost:3014/api/create-post", { title, text }, {withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/create-post`, { title, text }, {withCredentials: true})
     .then( () => {
         this.props.getData();
         this.setState({title: "", text: ""});
@@ -26,14 +28,15 @@ class AddPost extends Component {
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
-          <label>Text:</label>
-          <textarea name="text" value={this.state.text} onChange={ e => this.handleChange(e)} />
-          
-          <input type="submit" value="Submit" />
+      <div className="addPost">
+        <form className="addPostFrom" onSubmit={this.handleFormSubmit}>
+          <label>
+              <input className="title" type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} placeholder="Title"/>
+          </label>
+          <label>
+              <textarea name="text" value={this.state.text} onChange={ e => this.handleChange(e)} placeholder="Write your post here"/>
+          </label>
+          <input type="submit" value="Share" />
         </form>
       </div>
     )

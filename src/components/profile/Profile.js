@@ -17,7 +17,7 @@ class Profile extends React.Component {
 
     getSingleProfile(){
         const { params } = this.props.match;
-        axios.get(`http://localhost:3014/api/my-profile/${params.id}`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/my-profile/${params.id}`, { withCredentials: true })
         .then(responseFromApi => {
             const usersProfile = responseFromApi.data;
             this.setState({user: usersProfile});
@@ -28,7 +28,7 @@ class Profile extends React.Component {
     }
 
     getListOfCall = () => {
-        axios.get(`http://localhost:3014/api/call-list`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URL}/call-list`, {withCredentials: true})
         .then((dataFromDB)=>{
             console.log(dataFromDB.data)
             this.setState({listOfCalls: dataFromDB.data})

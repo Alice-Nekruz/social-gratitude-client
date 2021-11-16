@@ -18,7 +18,7 @@ class AddCall extends Component {
     const toWhom = this.props.userDetails;
 
 
-    axios.post("http://localhost:3014/api/create-call", { topic, date, amountOfTime, toWhom }, {withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/create-call`, { topic, date, amountOfTime, toWhom }, {withCredentials: true})
     .then( () => {
         this.props.refreshProfile();
         this.props.refreshListOfCalls();

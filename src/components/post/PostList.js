@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import './style/postList.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -14,9 +15,8 @@ class PostList extends Component {
     }
   }
 
-
   getAllPosts = () =>{
-    axios.get(`http://localhost:3014/api/posts`, {withCredentials: true})
+    axios.get(`${process.env.REACT_APP_API_URL}/posts`, {withCredentials: true})
     .then(responseFromApi => {
       this.setState({
         listOfPosts: responseFromApi.data
@@ -31,23 +31,25 @@ class PostList extends Component {
 
   render(){
     return(
-      <div>
-        <h1>Gratitude feed</h1>
-        
-        <div style={{width: '60%', float:"left"}}>
-          { this.state.listOfPosts.map( posts => {
-            return (
-              <div key={posts._id}>
-                  <h3>{posts.title}</h3>
-                  <p>{posts.text}</p>
-              </div>
-            )})
-          }
-        </div>
-        <div style={{width: '40%', float:"right"}}>
-            <AddPost getData={() => this.getAllPosts()}/>
-        </div>
-        <div><Link to={`/my-profile/${this.props.getUser?._id}`}>My Profile</Link></div> 
+      <div className="feed">
+            <h1>Gratitude feed</h1>
+            <div>
+                <AddPost getData={() => this.getAllPosts()}/>
+            </div>
+
+
+            <div className="listOfPosts">
+            { this.state.listOfPosts.map( posts => {
+                return (
+                <div key={posts._id}>
+                    <h3>{posts.title}</h3>
+                    <p>{posts.text}</p>
+                </div>
+                )})
+            }
+            </div>
+           
+            <div><Link to={`/my-profile/${this.props.getUser?._id}`}>My Profile</Link></div> 
       </div>
     )
   }

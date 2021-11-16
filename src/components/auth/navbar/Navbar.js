@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style/navbar.css';
 import { Link } from 'react-router-dom';
 import authService from '../../../services/auth-services';
 
@@ -15,15 +16,13 @@ export default class Navbar extends Component {
         if (isLoggedIn) {
             return (
                 <nav className="nav-style">
-                    <ul>
-                        <li>Welcome, {userData.username}</li>
-                        <li>
+                        <div className="logo"><Link to={'/posts'}> GRATITUDE</Link></div>
+                        <div>Welcome, {userData.username}</div>
+                        <div>
                             <Link to="/">
                                 <button onClick={() => this.logoutUser()}>Logout</button>
                             </Link>
-                        </li>
-                        <li><Link to={'/posts'}> Posts</Link></li>
-                    </ul>
+                        </div>
                 </nav>
             );
         } else {
