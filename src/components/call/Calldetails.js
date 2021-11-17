@@ -12,7 +12,6 @@ class CallDetails extends Component {
 
   getTheCall = () => {
     const { params } = this.props.match; // to get ID from URL
-    console.log(params)
     axios.get(`${process.env.REACT_APP_API_URL}/call-details/${params.callid}`, {withCredentials: true})
     .then( responseFromApi =>{
       const theCall = responseFromApi.data;
@@ -34,7 +33,6 @@ class CallDetails extends Component {
 
   deleteCall = () => {
     const { params } = this.props.match;
-    console.log('deletecall---->',params)
     axios.delete(`${process.env.REACT_APP_API_URL}/delete-call/${params.callid}`, { withCredentials: true })
         .then(() => {
             this.props.history.push(`/my-profile/${this.props.getUser?._id}`); // !!!         

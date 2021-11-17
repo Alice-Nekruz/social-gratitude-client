@@ -60,7 +60,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log("App",this.state.user)
     return (
       <div className="App">
         <Navbar userData={this.state.user} isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser} />

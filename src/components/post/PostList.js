@@ -21,7 +21,6 @@ class PostList extends Component {
   getPostOwner = () =>{
     axios.get(`${process.env.REACT_APP_API_URL}/my-profile/${this.state.listOfPosts}`, {withCredentials: true})
     .then(userFromApi => {
-      console.log("userFromApi",userFromApi)
       this.setState({
         ownerID: userFromApi.data
       })

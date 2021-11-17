@@ -30,7 +30,6 @@ class Profile extends React.Component {
     getListOfCall = () => {
         axios.get(`${process.env.REACT_APP_API_URL}/call-list`, {withCredentials: true})
         .then((dataFromDB)=>{
-            console.log(dataFromDB.data)
             this.setState({listOfCalls: dataFromDB.data})
           }
         )
