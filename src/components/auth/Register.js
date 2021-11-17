@@ -19,7 +19,7 @@ class Register extends React.Component {
                     username: "",
                     password: "",
                 });
-                // this.props.getUser(response, true);
+                this.props.getCurrentUser(createdUser, true);
             })
             .catch(error => console.log(error))
     }
@@ -61,7 +61,7 @@ class Register extends React.Component {
                     Already have an account?
                     <Link to={"/"}> Login</Link>
                 </p>
-
+                
             </div>
         )
     }

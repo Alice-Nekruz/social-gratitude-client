@@ -36,7 +36,7 @@ class AddPost extends Component {
           <label>
               <textarea className="text" name="text" value={this.state.text} onChange={ e => this.handleChange(e)} placeholder="Write your post here"/>
           </label>
-          <input type="submit" value="Share" />
+          <input className="button" type="submit" value="POST" />
         </form>
       </div>
     )

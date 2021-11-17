@@ -1,8 +1,13 @@
 
 .nav-style{
-    background-color: yellow;
+    background-color: rgb(130, 146, 238);
     display: flex;
     height: 10vh;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    width: 85%;
+    margin: auto;
+    padding: 0 30px;
+    text-decoration: none;
+    font-style: none;
   }
