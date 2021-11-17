@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router';
-
 
 
 class CallDetails extends Component {
@@ -37,9 +35,6 @@ class CallDetails extends Component {
 }
 
   render(){
-    // console.log("Details",this.props.getUser?._id)
-    // console.log("this.deleteCall()", this.deleteCall())
-    // console.log("this.deleteCall", this.deleteCall)
 
     return( 
       <>
