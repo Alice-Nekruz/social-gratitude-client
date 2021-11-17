@@ -5,7 +5,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
   console.log({ component: Component, user, rest });
 
   if (user) {
-    return <Route {...rest} render={routeProps => <Component {...routeProps} userData={user} />} />;
+    return <Route {...rest} render={props => <Component {...props} getUser={user} />} />;
   } else {
     return <Redirect to={{ pathname: '/', state: { from: rest.location } }} />;
   }
