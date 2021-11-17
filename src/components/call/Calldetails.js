@@ -1,11 +1,10 @@
-// components/tasks/TaskDetails.js
-
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 
-class CallDetails
- extends Component {
+
+class CallDetails extends Component {
   state = {}
 
   componentDidMount(){
@@ -14,7 +13,8 @@ class CallDetails
 
   getTheCall = () => {
     const { params } = this.props.match;
-    axios.get(`${process.env.REACT_APP_API_URL}/api/call-details/${params.callid}/tasks/${params.callid}`, {withCredentials: true})
+    console.log(params)
+    axios.get(`${process.env.REACT_APP_API_URL}/call-details/${params.callid}`, {withCredentials: true})
     .then( responseFromApi =>{
       const theCall = responseFromApi.data;
       this.setState(theCall);
@@ -24,16 +24,34 @@ class CallDetails
     })
   }
 
+  deleteCall = () => {
+    const { params } = this.props.match;
+    console.log('params',params)
+    axios.delete(`${process.env.REACT_APP_API_URL}/delete-call/${params.callid}`, { withCredentials: true })
+        .then(() => {
+            this.props.history.push(`/my-profile/${this.props.getUser?._id}`); // !!!         
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
+
   render(){
-    return(
-      <div>
-        <h1>{this.state.topic}</h1>
-        <p>{this.state.date}</p>
-        <p>{this.state.amountOfTime}</p>
-      </div>
+    // console.log("Details",this.props.getUser?._id)
+    // console.log("this.deleteCall()", this.deleteCall())
+    // console.log("this.deleteCall", this.deleteCall)
+
+    return( 
+      <>
+        <div>
+          <h1>{this.state.topic}</h1>
+          <p>{this.state.date}</p>
+          <p>{this.state.amountOfTime}</p>
+        </div>
+        <button onClick={() => this.deleteCall()}>Delete</button>
+      </>
     )
   }
 }
 
 export default CallDetails
-;

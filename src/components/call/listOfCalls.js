@@ -1,25 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 
 
 class ListOfCalls extends Component {
-    // state = {
-    //     listOfCalls: []
-    // }
-
-    // getListOfCall = () => {
-    //     axios.get(`http://localhost:3014/api/call-list`, {withCredentials: true})
-    //     .then((dataFromDB)=>{
-    //         console.log(dataFromDB.data)
-    //         this.setState({listOfCalls: dataFromDB.data})
-    //       }
-    //     )
-    // }
-
-    // componentDidMount() {
-    //     this.getListOfCall();
-    //   }
+   
 
     render() {
         return (
@@ -35,12 +21,11 @@ class ListOfCalls extends Component {
                                     <h3>{calls.topic}</h3> 
                                     <p>{calls._id}</p> 
                                 </div>
+                                <Link to={`/call-details/${calls._id}`}>Details</Link>
                             </div>
                         )
-                    } else {
-                        return('You dont have any call')
-                    }
-                        
+                    } 
+                    
                 })}
             </div>
         )
