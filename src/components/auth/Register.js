@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import authService from "../../services/auth-services";
+import { Redirect } from 'react-router';
 
 class Register extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        isSubmitted: false
     }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
         const { username, password } = this.state;
 
+        this.setState({isSubmitted: true})
+        
         authService.register(username, password)
             .then(createdUser => {
                 this.setState({
@@ -56,6 +60,7 @@ class Register extends React.Component {
 
                     <button type="submit"> Register </button>
                 </form>
+                    {this.state.isSubmitted && <Redirect to="/posts"/>}
 
                 <p>
                     Already have an account?
