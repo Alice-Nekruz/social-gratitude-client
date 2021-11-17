@@ -1,8 +1,8 @@
 
 .nav-style{
-    background-color: rgb(130, 146, 238);
+    background-color: #5f008b;
     display: flex;
-    height: 10vh;
+    height: 8vh;
     justify-content: space-between;
     align-items: center;
     width: 85%;
@@ -10,4 +10,22 @@
     padding: 0 30px;
     text-decoration: none;
     font-style: none;
+  }
+
+  .logout-button{
+    text-decoration: none;
+    font-style: none;
+  }
+ 
+  .logo-text{
+    text-decoration: none;
+    font-style: none;
+    color: white;
+    font-weight: bolder;
+  }
+  
+
+  .welcome{
+    color: white;
+    font-weight: bolder;
   }
