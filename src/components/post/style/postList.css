@@ -115,4 +115,5 @@
 .text-link {
     color: rgb(73, 73, 73);
     text-decoration: inherit;
+    margin: 5px 0px;
 }
