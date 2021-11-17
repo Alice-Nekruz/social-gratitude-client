@@ -8,6 +8,7 @@ import PostList from './components/post/PostList';
 import Profile from './components/profile/Profile';
 import CallDetails from './components/call/Calldetails';
 import authService from './services/auth-services';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 
 
@@ -66,14 +67,11 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
           <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />          
-          <Route exact path="/posts" render={() => <PostList getUser={this.state.user}/>}/>
-          <Route exact path="/my-profile/:id" render={props => <Profile {...props} getUser={this.state.user}/>}/>
-          <Route exact path="/call-details/:callid" render={(props) => <CallDetails {...props} getUser={this.state.user}/>}/>
+          <ProtectedRoute user={this.state.user} exact path="/posts" render={() => <PostList getUser={this.state.user}/>}/>
+          <ProtectedRoute user={this.state.user} exact path="/my-profile/:id" render={props => <Profile {...props} getUser={this.state.user}/>}/>
+          <ProtectedRoute user={this.state.user} exact path="/call-details/:callid" render={(props) => <CallDetails {...props} getUser={this.state.user}/>}/>
         </Switch>
-        
-          
-        
-        
+  
       </div>
     );
   }
