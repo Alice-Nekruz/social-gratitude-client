@@ -58,7 +58,7 @@ class PostList extends Component {
               <AddPost getData={() => this.getAllPosts()}/>
 
               <div >
-              { this.state.listOfPosts.map( posts => {
+              { this.state.listOfPosts.reverse().map( posts => {
                   return (
                   <div className="listOfPosts" key={posts._id}>
                       <Link to={`/my-profile/${posts.owner}`}>Bob</Link>
