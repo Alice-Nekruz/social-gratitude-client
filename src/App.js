@@ -67,9 +67,9 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
           <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />          
-          <ProtectedRoute user={this.state.user} path="/posts" component={PostList} />
-          <ProtectedRoute user={this.state.user} path="/my-profile/:id" component={Profile} />
-          <ProtectedRoute user={this.state.user} path="/call-details/:callid" component={CallDetails} />
+          <ProtectedRoute user={this.state.user} exact path="/posts" component={PostList} />
+          <ProtectedRoute user={this.state.user} exact path="/my-profile/:id" component={Profile} />
+          <ProtectedRoute user={this.state.user} exact path="/call-details/:callid" component={CallDetails} />
         </Switch>
   
       </div>
