@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import EditCall from './EditCall'
 
 
 class CallDetails extends Component {
@@ -10,7 +11,7 @@ class CallDetails extends Component {
   }
 
   getTheCall = () => {
-    const { params } = this.props.match;
+    const { params } = this.props.match; // to get ID from URL
     console.log(params)
     axios.get(`${process.env.REACT_APP_API_URL}/call-details/${params.callid}`, {withCredentials: true})
     .then( responseFromApi =>{
@@ -22,9 +23,18 @@ class CallDetails extends Component {
     })
   }
 
+  EditCallForm = () => {
+    if (this.state.topic) {
+        return <EditCall theCalltoEdit={this.state} refreshCallList={this.getTheCall} {...this.props} />
+
+      }
+    }
+
+
+
   deleteCall = () => {
     const { params } = this.props.match;
-    console.log('params',params)
+    console.log('deletecall---->',params)
     axios.delete(`${process.env.REACT_APP_API_URL}/delete-call/${params.callid}`, { withCredentials: true })
         .then(() => {
             this.props.history.push(`/my-profile/${this.props.getUser?._id}`); // !!!         
@@ -44,6 +54,7 @@ class CallDetails extends Component {
           <p>{this.state.amountOfTime}</p>
         </div>
         <button onClick={() => this.deleteCall()}>Delete</button>
+        <div>{this.EditCallForm()} </div>
       </>
     )
   }
