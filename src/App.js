@@ -59,13 +59,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    
     return (
       <div className="App">
         <Navbar userData={this.state.user} isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser} />
         <Switch>
           <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />          
           <Route exact path="/posts" render={props => <PostList getUser={this.state.user}/>}/>
           <Route exact path="/my-profile/:id" component={Profile}/>
           <Route exact path="/profile/:id/calldetails/:callid" component={CallDetails}/>
