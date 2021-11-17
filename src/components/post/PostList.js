@@ -13,10 +13,21 @@ class PostList extends Component {
     super(props)
     this.state = {
       listOfPosts: [],
+      ownerID: ''
       // userId: this.props
     }
   }
 
+  getPostOwner = () =>{
+    axios.get(`${process.env.REACT_APP_API_URL}/my-profile/${this.state.listOfPosts}`, {withCredentials: true})
+    .then(userFromApi => {
+      console.log("userFromApi",userFromApi)
+      this.setState({
+        ownerID: userFromApi.data
+      })
+    })
+  }
+  
   getAllPosts = () =>{
     axios.get(`${process.env.REACT_APP_API_URL}/posts`, {withCredentials: true})
     .then(responseFromApi => {
@@ -28,11 +39,11 @@ class PostList extends Component {
 
   componentDidMount() {
     this.getAllPosts();
+    this.getPostOwner()
   }
 
 
   render(){
-    console.log(this.props.getUser)
     return(
       <div className="feed">
           <div className="feed-container">
@@ -50,7 +61,7 @@ class PostList extends Component {
               { this.state.listOfPosts.map( posts => {
                   return (
                   <div className="listOfPosts" key={posts._id}>
-                      <Link to={`/my-profile/${posts._id}`}>Bob Charly</Link>
+                      <Link to={`/my-profile/${posts.owner}`}>Bob</Link>
                       <h3>{posts.title}</h3>
                       <p>{posts.text}</p>
                   </div>

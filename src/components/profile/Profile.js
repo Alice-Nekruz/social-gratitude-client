@@ -47,13 +47,14 @@ class Profile extends React.Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <h1>This is the profile off..</h1>
                 <h1>{this.state.user.username}</h1>
-                <div>{this.renderAddCallForm()} </div>
-                <div>{this.renderListOfCall()} </div>
+                {this.state.user._id === this.props.getUser?._id ?
+                    <div>{this.renderListOfCall()} </div>:
+                    <div>{this.renderAddCallForm()} </div> 
+                }
             </div>
         )
     }
