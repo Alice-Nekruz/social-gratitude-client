@@ -63,6 +63,7 @@ class PostList extends Component {
                       <Link to={`/my-profile/${posts.owner._id}`}>{posts.owner.username}</Link>
                       <h3>{posts.title}</h3>
                       <p>{posts.text}</p>
+                      <img src={posts.imageUrl} alt="" />
                   </div>
                   )})
               }
