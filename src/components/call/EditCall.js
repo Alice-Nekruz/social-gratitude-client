@@ -20,7 +20,10 @@ class EditCall extends Component {
       // Use the passed down api call to render the updated call data
         this.props.refreshCallList();   
     })
-    .catch( error => console.log(error) )
+    .catch( error => {
+      console.log(error)
+      alert("We had a small issue updating the information of your call - please try again.")
+    })
   }
 
   handleChange = (event) => {  
