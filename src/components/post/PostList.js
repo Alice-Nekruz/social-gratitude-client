@@ -43,6 +43,7 @@ class PostList extends Component {
 
 
   render(){
+    console.log(this.state.listOfPosts)
     return(
       <div className="feed">
           <div className="feed-container">
@@ -51,6 +52,7 @@ class PostList extends Component {
               <img src={mypic} alt="profile pic"/>
               <Link to={`/my-profile/${this.props.getUser?._id}`}>Visit My Profile</Link>
               <div className='text-link'>Username: {this.props.getUser?.username}</div>
+              <div className='profile-img'>Image: {<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
             </div> 
             
             <div>
