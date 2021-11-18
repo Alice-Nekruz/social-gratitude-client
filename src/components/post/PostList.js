@@ -49,10 +49,10 @@ class PostList extends Component {
           <div className="feed-container">
             
             <div className="side-profile">
-              <img src={mypic} alt="profile pic"/>
+              <div className='profile-img'>{<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
+              {/* <img src={mypic} alt="profile pic"/> */}
               <Link to={`/my-profile/${this.props.getUser?._id}`}>Visit My Profile</Link>
               <div className='text-link'>Username: {this.props.getUser?.username}</div>
-              <div className='profile-img'>Image: {<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
             </div> 
             
             <div>
