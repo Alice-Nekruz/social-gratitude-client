@@ -104,8 +104,8 @@
 
 .side-profile img{
     height: 100px;
-    width: 100px;
-    background-color: blue;
+    width: 100px;   
+    background-color: rgb(168, 168, 168);
     margin: 10px auto 20px;
     border-radius: 100%;
 }
