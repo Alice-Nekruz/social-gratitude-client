@@ -73,14 +73,22 @@ export default class App extends React.Component {
           <ProtectedRoute user={this.state.user} exact path="/my-profile/:id" component={Profile} />
           <ProtectedRoute user={this.state.user} exact path="/call-details/:callid" component={CallDetails} />
 
-            {!this.state?.user ?
-            <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />
-            : <><h1>Wrong way my friend!</h1> <p>You are already logged in, please go back to your gratitude feed</p></>
-          }
-          {!this.state?.user ?
-            <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
-            : <><h1>Wrong way my friend!</h1> <p>You are already logged in, please go back to your gratitude feed</p></>
-          }
+          <Route exact path="/" render={props => {
+            if(this.state?.user){
+              return <Redirect to="/posts" />
+            } else {
+              return <Login {...props} getCurrentUser={this.getCurrentUser} />
+            }
+          }} />
+
+          <Route exact path="/register" render={props => {
+            if (this.state?.user) {
+              return <Redirect to="/posts" />
+            } else {
+              return <Register {...props} getCurrentUser={this.getCurrentUser} />
+            }
+          }} />
+
 
         </Switch>
   
