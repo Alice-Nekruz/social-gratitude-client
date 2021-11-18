@@ -24,7 +24,10 @@ class AddCall extends Component {
         this.props.refreshListOfCalls();
         this.setState({topic: "", date: "", amountOfTime: ""});
     })
-    .catch( error => console.log(error) )
+    .catch( error => {
+      console.log(error)
+      alert("We had small issue creating your call - please try again")
+    })
   }
 
   handleChange = (event) => {  

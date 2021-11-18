@@ -46,7 +46,10 @@ class Register extends React.Component {
                 });
                 this.props.getCurrentUser(createdUser, true);
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error)
+                alert(`Please make sure this username is not taken. Your password should contain at least 6 characters, one upper case and one symbol (numbers included. Try again - thank you!`)
+            })
         }
     }
 
@@ -73,7 +76,10 @@ class Register extends React.Component {
             // after the console.log we can see that response carries 'secure_url' which we can use to update the state
             this.setState({ imageUrl: response.secure_url, isUploading: false  });
           })
-          .catch(err => console.log('Error while uploading the file: ', err));
+          .catch(err => {
+              console.log('Error while uploading the file: ', err)
+              alert("We had a little problem uploading your file - try again please.")
+            });
       };
 
 
