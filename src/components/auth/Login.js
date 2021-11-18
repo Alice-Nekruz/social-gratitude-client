@@ -7,7 +7,7 @@ import { Route } from 'react-router';
 export default class Login extends Component {
     constructor(props) {
         super(props)
-        this.state = { username: '', password: '', isSubmitted: false };
+        this.state = { username: '', password: '', isSubmitted: false};
     }
 
     handleFormSubmit = event => {
@@ -22,7 +22,10 @@ export default class Login extends Component {
                 this.setState({ username: '', password: '' });
                 this.props.getCurrentUser(response, true);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error)
+                alert("Please provide a valid username and password.")
+            });
     };
 
     handleChange = event => {
