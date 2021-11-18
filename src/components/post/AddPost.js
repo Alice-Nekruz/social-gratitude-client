@@ -4,6 +4,9 @@ import axios from 'axios';
 import './style/postList.css';
 import imgService from '../../api/service';
 import {Button} from '@mui/material'
+import { styled } from '@mui/material/styles';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
 
 
 class AddPost extends Component {
@@ -73,19 +76,29 @@ class AddPost extends Component {
 
 
   render(){
+    const Input = styled('input')({
+      display: 'none',
+    });
     console.log("this.state.imageUrl---->",this.state.imageUrl)
     return(
       <div className="addPost">
         {this.state.isUploading && <p className='error-msg'>Please wait, the image is being uploaded...</p>}
         <form className="addPostFrom" onSubmit={this.handleFormSubmit}>
           <label>
-              <input className="title" type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} placeholder="Title"/>
+              <input className="title" type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} placeholder="To..."/>
           </label>
           <label>
               <textarea className="text" name="text" value={this.state.text} onChange={ e => this.handleChange(e)} placeholder="Write your post here"/>
           </label>
-          <input type="file" onChange={(e) => this.handleFileUpload(e)}/>
+          <div className="post-buttons">
+          <label htmlFor="contained-button-file">
+            <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => this.handleFileUpload(e)}/>
+            <Button className="button" variant="outlined" color="secondary" component="span">
+            <PhotoCamera/>Upload
+            </Button>
+          </label>
           <Button className="button" color="secondary" variant="contained" type="submit">POST</Button>
+          </div>        
         </form>
       </div>
     )
