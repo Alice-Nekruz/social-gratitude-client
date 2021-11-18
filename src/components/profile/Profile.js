@@ -46,24 +46,25 @@ class Profile extends React.Component {
 
 
     render() {
+        console.log(this.state.listOfCalls)
+        console.log(this.renderListOfCall())
         return (
             <div>
                 {this.state.user._id === this.props.getUser?._id ?
                     <h1>Welcome to your profile</h1>
                     : <h1> This is the profile of</h1>
                 }
-                <h1>{this.state.user.username}</h1>
-                <h1>{this.state.user.name}</h1>
-                <h1>{this.state.user.gender}</h1>
-                <h1>{this.state.user.hobbies}</h1>
-                <img src={this.state.user.imageUrl} alt="" />
+                <h2>{this.state.user.username}</h2>
+                <p>But their real name is <b>{this.state.user.name}</b>,</p>
+                <p>and they are a {this.state.user.gender} person.</p>
+                <p>They really love {this.state.user.hobbies}!</p>
+                {this.state.user.imageUrl &&
+                <><h3>Here is how they might look like</h3>
+                <img src={this.state.user.imageUrl} alt="" /></>}
+                
                 {this.state.user._id === this.props.getUser?._id ?
-                    <h3>Here you can find all the calls you scheduled</h3>
-                    : <h3>Make some time to care for each other</h3>
-                }
-                {this.state.user._id === this.props.getUser?._id ?
-                    <div>{this.renderListOfCall()} </div>:
-                    <div>{this.renderAddCallForm()} </div> 
+                    <div>{this.renderListOfCall()} </div>
+                    : <div>{this.renderAddCallForm()} </div> 
                 }
             </div>
         )
