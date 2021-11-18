@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style/navbar.css';
 import { Link } from 'react-router-dom';
 import authService from '../../../services/auth-services';
+import logoPic from './style/website.png'
 
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -19,7 +20,8 @@ export default class Navbar extends Component {
         if (isLoggedIn) {
             return (
                 <nav className="nav-style">
-                        <div className="logo"><Link className="logo-text" to={'/posts'}> GRATITUDE FEED</Link></div>
+                        <div className="logo"><Link className="logo-text" to={'/posts'}><img src={logoPic} alt="logo pic"/>
+</Link></div>
                         <div className="welcome">Let's spread gratitude into the world!</div>
                         <div >
                             <Link className="logout-button" to="/">

@@ -50,7 +50,6 @@ class PostList extends Component {
             
             <div className="side-profile">
               <div className='profile-img'>{<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
-              {/* <img src={mypic} alt="profile pic"/> */}
               <Link to={`/my-profile/${this.props.getUser?._id}`}>Visit My Profile</Link>
               <div className='text-link'>Username: {this.props.getUser?.username}</div>
             </div> 

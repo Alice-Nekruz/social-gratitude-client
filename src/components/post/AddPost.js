@@ -22,7 +22,7 @@ class AddPost extends Component {
         // console.log("callback....");
         // console.log(event);
         this.handleFormSubmit(event);
-      }, 500);
+      }, 100);
     } else{
 
     const title = this.state.title;

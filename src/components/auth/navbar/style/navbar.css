@@ -1,8 +1,8 @@
 
 .nav-style{
-    background-color: #5f008b;
+    background-color: #8F57FF;
     display: flex;
-    height: 8vh;
+    height: 9vh;
     justify-content: space-between;
     align-items: center;
     width: 85%;
@@ -22,6 +22,11 @@
     font-style: none;
     color: white;
     font-weight: bolder;
+  }
+
+  .logo img{
+    max-height: 80px;
+    max-width: 150px;
   }
   
 
