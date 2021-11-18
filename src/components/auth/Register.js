@@ -107,7 +107,7 @@ class Register extends React.Component {
                         />
                     </label>
                     <label>
-                        Name:
+                        Surname:
                         <input
                             type="text"
                             name="name"
@@ -116,7 +116,7 @@ class Register extends React.Component {
                         />
                     </label>
                     <label>
-                        Gender:
+                        I identify as:
                         <input
                             type="text"
                             name="gender"
@@ -125,7 +125,7 @@ class Register extends React.Component {
                         />
                     </label>
                     <label>
-                        Hobbies:
+                        My hobbies:
                         <input
                             type="text"
                             name="hobbies"
