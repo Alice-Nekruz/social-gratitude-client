@@ -46,14 +46,36 @@ class CallDetails extends Component {
         })
 }
 
+  timeConverter = (timestamp) => {
+    const result = timestamp.split('')
+    let year = []
+    year.push(result[0], result[1], result[2], result[3])
+    const newYear = year.join('')
+
+
+    const month = []
+    month.push(result[5], result[6])
+    const newMonth = month.join('')
+
+    const day = []
+    day.push(result[8], result[9])
+    const newDay = day.join('')
+
+    const date = []
+    date.push(newDay, newMonth, newYear)
+    const newDate = date.join('.')
+
+    return newDate;
+  }
+
   render(){
 
     return( 
       <>
         <div>
           <h1>{this.state.topic}</h1>
-          <p>{this.state.date}</p>
-          <p>{this.state.amountOfTime}</p>
+          <p>This call is scheduled for the {this.timeConverter(`${this.state.date}`)}</p>
+          <p>It is planed in for {this.state.amountOfTime} hours</p>
         </div>
         {/* <button onClick={() => this.deleteCall()}>Delete</button> */}
         <Button onClick={() => this.deleteCall()} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>
