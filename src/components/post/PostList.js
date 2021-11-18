@@ -18,8 +18,8 @@ class PostList extends Component {
     }
   }
 
-  getPostOwner = () =>{
-    axios.get(`${process.env.REACT_APP_API_URL}/my-profile/${this.state.listOfPosts}`, {withCredentials: true})
+  getPostOwner = (id) =>{
+    axios.get(`${process.env.REACT_APP_API_URL}/my-profile/(id)`, {withCredentials: true})
     .then(userFromApi => {
       this.setState({
         ownerID: userFromApi.data
@@ -60,7 +60,7 @@ class PostList extends Component {
               { this.state.listOfPosts.reverse().map( posts => {
                   return (
                   <div className="listOfPosts" key={posts._id}>
-                      <Link to={`/my-profile/${posts.owner}`}>Bob</Link>
+                      <Link to={`/my-profile/${posts.owner._id}`}>{posts.owner.username}</Link>
                       <h3>{posts.title}</h3>
                       <p>{posts.text}</p>
                   </div>

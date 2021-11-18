@@ -9,6 +9,7 @@ import Profile from './components/profile/Profile';
 import CallDetails from './components/call/Calldetails';
 import authService from './services/auth-services';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import { Redirect } from 'react-router';
 
 
 
@@ -60,15 +61,28 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.user)
+    if (!this.state) return null;
+     
     return (
       <div className="App">
         <Navbar userData={this.state.user} isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser} />
-        <Switch>
-          <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
-          <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />          
+        <Switch>          
+                    
           <ProtectedRoute user={this.state.user} exact path="/posts" component={PostList} />
           <ProtectedRoute user={this.state.user} exact path="/my-profile/:id" component={Profile} />
           <ProtectedRoute user={this.state.user} exact path="/call-details/:callid" component={CallDetails} />
+
+          {!this.state?.user ?
+            <Route exact path="/" render={props => <Login {...props} getCurrentUser={this.getCurrentUser} />} />
+            : <><h1>Wrong way my friend!</h1> <p>You are already logged in, please go back to your gratitude feed</p></>
+            }
+
+            {!this.state?.user ?
+            <Route exact path="/register" render={props => <Register {...props} getCurrentUser={this.getCurrentUser} />} />
+            : <><h1>Wrong way my friend!</h1> <p>You are already logged in, please go back to your gratitude feed</p></>
+          }
+
         </Switch>
   
       </div>
