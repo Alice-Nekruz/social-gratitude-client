@@ -39,7 +39,6 @@ class AddCall extends Component {
   render(){
     return(
       <div>
-        <h3>Add Call</h3>
         <form onSubmit={this.handleFormSubmit}>
           <label>Topic:</label>
           <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />

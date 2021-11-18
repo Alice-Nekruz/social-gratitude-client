@@ -57,7 +57,10 @@ class Profile extends React.Component {
                 <h1>{this.state.user.gender}</h1>
                 <h1>{this.state.user.hobbies}</h1>
                 <img src={this.state.user.imageUrl} alt="" />
-                <h3>Here you can find all the calls you scheduled</h3>
+                {this.state.user._id === this.props.getUser?._id ?
+                    <h3>Here you can find all the calls you scheduled</h3>
+                    : <h3>Make some time to care for each other</h3>
+                }
                 {this.state.user._id === this.props.getUser?._id ?
                     <div>{this.renderListOfCall()} </div>:
                     <div>{this.renderAddCallForm()} </div> 
