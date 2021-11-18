@@ -19,8 +19,8 @@ export default class Navbar extends Component {
         if (isLoggedIn) {
             return (
                 <nav className="nav-style">
-                        <div className="logo"><Link className="logo-text" to={'/posts'}> GRATITUDE</Link></div>
-                        <div className="welcome">Welcome, {userData.username}</div>
+                        <div className="logo"><Link className="logo-text" to={'/posts'}> GRATITUDE FEED</Link></div>
+                        <div className="welcome">Let's spread gratitude into the world!</div>
                         <div >
                             <Link className="logout-button" to="/">
                                 <Button onClick={() => this.logoutUser()} variant="contained" color="secondary">Logout</Button>

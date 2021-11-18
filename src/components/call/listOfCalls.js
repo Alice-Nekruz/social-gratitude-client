@@ -8,9 +8,7 @@ class ListOfCalls extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Hellow</h1>
-                
+            <div>                
                 {this.props.listOfCallsFromState.map(calls => { 
                     if(calls.owner === this.props.userDetails){
 
