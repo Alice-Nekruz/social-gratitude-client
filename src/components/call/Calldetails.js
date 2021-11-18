@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import EditCall from './EditCall'
 
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+
 
 class CallDetails extends Component {
   state = {}
@@ -51,7 +55,11 @@ class CallDetails extends Component {
           <p>{this.state.date}</p>
           <p>{this.state.amountOfTime}</p>
         </div>
-        <button onClick={() => this.deleteCall()}>Delete</button>
+        {/* <button onClick={() => this.deleteCall()}>Delete</button> */}
+        <Button onClick={() => this.deleteCall()} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+
         <div>{this.EditCallForm()} </div>
       </>
     )

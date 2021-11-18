@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './style/postList.css';
+import {Button} from '@mui/material'
 
 
 class AddPost extends Component {
@@ -36,7 +37,8 @@ class AddPost extends Component {
           <label>
               <textarea className="text" name="text" value={this.state.text} onChange={ e => this.handleChange(e)} placeholder="Write your post here"/>
           </label>
-          <input className="button" type="submit" value="POST" />
+          {/* <input className="button" type="submit" value="POST" /> */}
+          <Button className="button" color="secondary" variant="contained" type="submit">POST</Button>
         </form>
       </div>
     )

@@ -57,8 +57,9 @@
 .button{
     background-color: rgb(105, 88, 182);
     width: 100px;
-    font-weight: bold;
-    color: white;
+    height: 25px;
+    /* font-weight: bold;
+    color: white; */
     /* border-radius: 10px; */
 
 }
