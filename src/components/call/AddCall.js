@@ -44,7 +44,7 @@ class AddCall extends Component {
           <label>Topic:</label>
           <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />
           <label>Date:</label>
-          <input type="date" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
+          <input type="datetime-local" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
           <label>amountOfTime:</label>
           <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
           <input type="submit" value="Submit" />
