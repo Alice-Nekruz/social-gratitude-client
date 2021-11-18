@@ -34,7 +34,10 @@ class AddPost extends Component {
         this.props.getData();
         this.setState({title: "", text: "", imageUrl: "",});
     })
-    .catch( error => console.log(error.response.data) )
+    .catch( error => {
+      console.log(error.response.data)
+      alert("We had a small error creating your post - please try again.")
+    })
   }
 }
 
@@ -61,7 +64,10 @@ class AddPost extends Component {
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
         this.setState({ imageUrl: response.secure_url, isUploading: false  });
       })
-      .catch(err => console.log('Error while uploading the file: ', err));
+      .catch(err => {
+        console.log('Error while uploading the file: ', err)
+        alert("We had a small error uploading your file - please try again.")
+      });
   };
   
 
