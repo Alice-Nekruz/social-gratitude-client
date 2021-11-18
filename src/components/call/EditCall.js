@@ -5,7 +5,8 @@ class EditCall extends Component {
   state = {
     topic: this.props.theCalltoEdit.topic, 
     date: this.props.theCalltoEdit.date,
-    amountOfTime: this.props.theCalltoEdit.amountOfTime
+    amountOfTime: this.props.theCalltoEdit.amountOfTime,
+    isToggle: false
   }
   
   handleFormSubmit = (event) => {
@@ -31,12 +32,21 @@ class EditCall extends Component {
     this.setState({[name]: value});
 }
 
+  handleClick = () => {
+    this.setState(prevState => ({
+      isToggle: !prevState.isToggle
+    }));
+  }
+
   render(){
     return (
       <div>
-        <hr />
-        <h3>Edit Form</h3>
-        <form onSubmit={this.handleFormSubmit}>
+        {!this.state.isToggle &&
+        <button onClick={this.handleClick}>
+           Edit
+        </button>}
+          {this.state.isToggle &&
+                  <form onSubmit={this.handleFormSubmit}>
           <label>Topic:</label>
           <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />
           <label>Date:</label>
@@ -45,6 +55,7 @@ class EditCall extends Component {
           <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
           <input type="submit" value="Submit" />
         </form>
+          }
       </div>
     )
   }

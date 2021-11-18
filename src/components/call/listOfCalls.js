@@ -8,7 +8,8 @@ class ListOfCalls extends Component {
 
     render() {
         return (
-            <div>                
+            <div>
+                <h3>Here you can find all the calls you scheduled</h3>
                 {this.props.listOfCallsFromState.map(calls => { 
                     if(calls.owner === this.props.userDetails){
 
