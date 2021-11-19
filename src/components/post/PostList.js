@@ -9,6 +9,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import PersonIcon from '@mui/icons-material/Person';
 import WcIcon from '@mui/icons-material/Wc';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import defaultImg from '../../img/default-image-profile.png'
 
 
 import AddPost from './AddPost'; // <== !!!
@@ -48,13 +49,18 @@ class PostList extends Component {
 
 
   render(){
-    console.log(this.state.listOfPosts)
+    console.log("imageurl.....", this.props.getUser?.imageUrl )
     return(
       <div className="feed">
           <div className="feed-container">
             
             <div className="side-profile">
-              <div>{<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
+            <div>
+                {this.props.getUser?.imageUrl ?
+                  <img src={this.props.getUser?.imageUrl} alt="sd"/> :
+                <img src={defaultImg} alt="sd" />
+                }
+            </div>
               <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
               <div className="profile-info-container">
                 <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
@@ -72,7 +78,14 @@ class PostList extends Component {
                     <div className="listOfPosts" key={posts._id}>
                         <div className="postoflist-info">
                             <div className="postlist-profileimg-name">
-                            <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}><div className='profile-img'>{<img src={posts.owner.imageUrl} alt="photo"/>}</div></Link>
+                            <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>
+                              <div className='profile-img'>
+                                {this.props.getUser?.imageUrl ?
+                                <img src={posts.owner.imageUrl} alt="photo" />
+                                  : <img src={defaultImg} alt="photo" />
+                              }
+                              </div>
+                            </Link>
                               <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>{posts.owner.name}</Link>
                             </div>
                             <div class="post-title-text">
