@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Social Gratitude
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
+<br>
 
-## Available Scripts
+___
+*This project is the final project of a 9 week Bootcamp for full-stack development.
+The requirements where to build a full-stack application with a minimum of 3 Models and using React.
+We have protected all routes in the front an back-end.
+For the Database MongoDB was a requirement as for deployment requirements where to use Heroku and Netlify.*
 
-In the project directory, you can run:
+___
 
-### `yarn start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About Social Gratitude
+Don't we all want to make the world a better place?
+We all need to know we are needed. So why not starting by letting your friend know, the other day, they really helped you. You will make their day!
+If you think a user might need an extra boost of humanity and help, go ahead and schedule a call with them. Safely, over our platform.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br>
 
-### `yarn test`
+## About why
+We live in a fast paced world full of pressure to be best and better.
+Our goal with this project was to raise awareness in people. Our days are full with little things and gestures that makes us smile and yet we always see the things that bring us down.
+It feels good to acknowledge the positive things as well as for people around us to know they could help making our day just a bit better.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `yarn build`
+## Features to come
+- Add users to your friends list
+- send a push notification to people you schedule a call with
+- synchronize your calls with your favorite calender
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Important links
+**Github Nekruz**: https://github.com/nekruza
+<br>**Github Alice**: https://github.com/AliceXix
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Presentation**: https://docs.google.com/presentation/d/1BTXJR-17mKv1_E1hEZR0pah0JrLDgr8RQSE57l1TvIs/edit?usp=sharing
+<br>**Documentation**: https://notch-climb-686.notion.site/Social-gratitude-1bd2c2aacf624a77bf72040b12676e60
 
-### `yarn eject`
+**Web-application**: https://social-gratitude.netlify.app/posts
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+<br>
+*Let's make our society more grateful again.*
