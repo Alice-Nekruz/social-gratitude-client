@@ -104,6 +104,10 @@
     box-shadow: 0px 0px 5px rgb(189, 187, 187);
     border-radius: 5px;
     align-items: center;
+    /* background-image: url(./avatar.jpeg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
 }
 
 .side-profile img{
@@ -112,6 +116,7 @@
     background-color: rgb(168, 168, 168);
     margin: 10px auto 20px;
     border-radius: 100%;
+    
 }
 
 

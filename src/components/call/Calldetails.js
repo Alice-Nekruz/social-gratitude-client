@@ -42,7 +42,6 @@ class CallDetails extends Component {
             this.props.history.push(`/my-profile/${this.props.getUser?._id}`); // !!!         
         })
         .catch((err) => {
-            console.log(err)
         })
 }
 
@@ -71,19 +70,19 @@ class CallDetails extends Component {
   render(){
 
     return( 
-      <>
-        <div>
+      <div className="details-wrapper">
+        <div className="detail-delete-info">
           <h1>{this.state.topic}</h1>
           <p>This call is scheduled for the {this.timeConverter(`${this.state.date}`)}</p>
           <p>It is planed in for {this.state.amountOfTime} hours</p>
-        </div>
         {/* <button onClick={() => this.deleteCall()}>Delete</button> */}
-        <Button onClick={() => this.deleteCall()} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>
-        Delete
-      </Button>
+        <Button className="delete-button" onClick={() => this.deleteCall()} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>
+          Delete
+        </Button>
+      </div>
 
         <div>{this.EditCallForm()} </div>
-      </>
+      </div>
     )
   }
 }

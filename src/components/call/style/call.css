@@ -1,0 +1,60 @@
+.callContainer{
+    max-width: 300px;
+    min-width: 260px;
+    max-height: 170px;
+    min-height: 120px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(231, 205, 255);
+    font-weight: bolder;
+    box-shadow: 0px 0px 5px rgb(189, 187, 187);
+
+  }
+
+  .callContainer Button{
+    height: 25px;
+    margin-top: 10px;
+  }
+  
+  .callContainer p{
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .text-details{
+    text-decoration: none;
+    color: white;
+  }
+
+  .call-list-inside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .details-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(189, 187, 187);
+    padding: 20px;
+  }
+
+  .edit-button{
+    width: 150px;
+    margin: 20px 0px 20px 100px;
+  }
+
+  .detail-delete-info{
+    
+  }
+
+  .delete-button{
+    width: 150px;
+    margin: 40px auto;
+  }
