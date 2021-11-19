@@ -113,7 +113,7 @@ class Register extends React.Component {
                             required
                             id="outlined-required"
                             name="username"
-                            label="Required"
+                            label="Username"
                             defaultValue="username World"
                             value={this.state.username} 
                             onChange={this.handleChange}
@@ -138,28 +138,28 @@ class Register extends React.Component {
                             label="My name is..."
                             defaultValue="username World"
                             value={this.state.name} 
-                            onChange={ e => this.handleChange(e)}
+                            onChange={this.handleChange}
                         />
                         
                             
                             <TextField
                                 id="outlined-required"
-                                name="name"
+                                name="gender"
                                 type="text"
-                                label="My hobbies are..."
+                                label="I am identified as..."
                                 defaultValue="username World"
                                 value={this.state.gender} 
-                                onChange={ e => this.handleChange(e)}
+                                onChange={this.handleChange}
                             />
                             
                             <TextField
                                 id="outlined-required"
-                                name="name"
+                                name="hobbies"
                                 type="text"
                                 label="My hobbies are..."
                                 defaultValue="username World"
                                 value={this.state.hobbies} 
-                                onChange={ e => this.handleChange(e)}
+                                onChange={this.handleChange}
                             />
 
                     <div className="register-photo">
