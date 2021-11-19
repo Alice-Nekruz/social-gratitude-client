@@ -20,8 +20,8 @@ class EditCall extends Component {
 
     axios.put(`${process.env.REACT_APP_API_URL}/edit-call/${this.props.theCalltoEdit?._id}`, { topic, date, amountOfTime }, { withCredentials: true })
     .then( () => {
-      // Use the passed down api call to render the updated call data
-        this.props.refreshCallList();   
+        this.props.refreshCallList();
+        alert("Your call has successfully been updated!")
     })
     .catch( error => {
       console.log(error)
