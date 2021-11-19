@@ -100,7 +100,9 @@ class PostList extends Component {
               </div>
             </div>
            
-            <div className="friendList">FriendList</div>
+            <div className="friendList">
+              <h3>A grateful environment is a magnet </h3><h3>for miracles!</h3>
+            </div>
           </div>
       </div>
     )

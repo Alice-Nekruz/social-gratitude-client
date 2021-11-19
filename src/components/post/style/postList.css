@@ -121,11 +121,17 @@
 
 
 .friendList{
-    background-color: blanchedalmond;
-    height: 50vh;
+    background-color: rgb(248, 242, 151);
+    height: 30vh;
     width: 15vw;
     display: flex;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgb(189, 187, 187);
+    border-radius: 5px;
 }
 
 .text-link-name {
