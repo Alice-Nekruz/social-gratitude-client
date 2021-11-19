@@ -51,10 +51,12 @@
   }
 
   .detail-delete-info{
-    
+    margin-bottom: 20px;
   }
 
   .delete-button{
     width: 150px;
     margin: 40px auto;
   }
+
+

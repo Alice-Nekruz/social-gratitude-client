@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import './style/call.css'
+import { styled } from '@mui/material/styles';
+import SaveIcon from '@mui/icons-material/Save';
+
 
 class EditCall extends Component {
   state = {
@@ -41,6 +44,9 @@ class EditCall extends Component {
   }
 
   render(){
+    const Input = styled('input')({
+      display: 'none',
+    });
     return (
       <div>
         {!this.state.isToggle &&
@@ -48,14 +54,19 @@ class EditCall extends Component {
             Edit
           </Button>}
           {this.state.isToggle &&
-                  <form onSubmit={this.handleFormSubmit}>
+                  <form className="form" onSubmit={this.handleFormSubmit}>
           <label>Topic:</label>
           <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />
           <label>Date:</label>
           <input type="date" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
           <label>amountOfTime:</label>
           <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
-          <input type="submit" value="Submit" />
+          <label htmlFor="contained-button-file">
+            <Input id="contained-button-file" type="submit" value="Submit"/>
+            <Button startIcon={<SaveIcon />} className="button" variant="outlined" color="secondary" component="span">
+              Save
+            </Button>
+          </label>
         </form>
           }
       </div>

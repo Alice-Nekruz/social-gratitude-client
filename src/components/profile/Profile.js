@@ -4,6 +4,9 @@ import AddCall from '../call/AddCall'
 import ListOfCalls from '../call/listOfCalls'
 import './profile.css';
 import backgroundPhoto from '../../photos/Background_photo.png'
+import PersonIcon from '@mui/icons-material/Person';
+import WcIcon from '@mui/icons-material/Wc';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 
 class Profile extends React.Component {
     state = {
@@ -61,10 +64,10 @@ class Profile extends React.Component {
                     {this.state.user._id === this.props.getUser?._id ?
                         <>
                             <div className="info-profile">
-                                <h3>Welcome to my profile!</h3>
-                                <p>Name: <b>{this.state.user.name}</b>,</p>
-                                <p>Gender: {this.state.user.gender}</p>
-                                <p>Hobbies: {this.state.user.hobbies}!</p>
+                                <h3>Welcome to your profile!</h3>
+                                <p><PersonIcon color="secondary"/> Name: <b>{this.state.user.name}</b></p>
+                                <p><WcIcon color="secondary"/> Gender: {this.state.user.gender}</p>
+                                <p><SportsSoccerIcon color="secondary"/> Hobbies: {this.state.user.hobbies}!</p>
                                 {/* <h1>Welcome to my profile!</h1>
                                 <p>My name is <b>{this.state.user.name}</b>,</p>
                                 <p>and I am are a {this.state.user.gender} person.</p>
@@ -74,11 +77,15 @@ class Profile extends React.Component {
                         : 
                         <>
                             <div className="info-profile">
-                                <h1> This is the profile</h1>
-                                <h2>of {this.state.user.username}</h2>
+                            <h3>This is the profile of {this.state.user.username}</h3>
+                                <p><PersonIcon color="secondary"/> Name: <b>{this.state.user.name}</b></p>
+                                <p><WcIcon color="secondary"/> Gender: {this.state.user.gender}</p>
+                                <p><SportsSoccerIcon color="secondary"/> Hobbies: {this.state.user.hobbies}!</p>
+                                {/* <h3> This is the profile</h3>
+                                <h3>of {this.state.user.username}</h3>
                                 <p>But their real name is <b>{this.state.user.name}</b>,</p>
                                 <p>and they are a {this.state.user.gender} person.</p>
-                                <p>They really love {this.state.user.hobbies}!</p>
+                                <p>They really love {this.state.user.hobbies}!</p> */}
                             </div>
                         </>
                     }
