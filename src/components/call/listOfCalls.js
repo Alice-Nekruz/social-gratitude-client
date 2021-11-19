@@ -18,9 +18,7 @@ class ListOfCalls extends Component {
                             return (
                                 <div className="callContainer">
                                     <div key={calls._id}>
-                                        <h3>{calls.topic}</h3> 
-                                        <p>{calls.date}</p> 
-                                        <span>{calls.amountOfTime} hour</span>
+                                        <h3>{calls.topic}</h3>
                                     </div>
                                     <Button variant="contained" color="secondary">
                                         <Link className="text-details" to={`/call-details/${calls._id}`}>Details</Link>

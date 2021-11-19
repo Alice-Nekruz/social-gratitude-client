@@ -68,10 +68,6 @@ class Profile extends React.Component {
                                 <p><PersonIcon color="secondary"/> Name: <b>{this.state.user.name}</b></p>
                                 <p><WcIcon color="secondary"/> Gender: {this.state.user.gender}</p>
                                 <p><SportsSoccerIcon color="secondary"/> Hobbies: {this.state.user.hobbies}!</p>
-                                {/* <h1>Welcome to my profile!</h1>
-                                <p>My name is <b>{this.state.user.name}</b>,</p>
-                                <p>and I am are a {this.state.user.gender} person.</p>
-                                <p>I really love {this.state.user.hobbies}!</p> */}
                             </div>
                         </>    
                         : 
@@ -81,11 +77,6 @@ class Profile extends React.Component {
                                 <p><PersonIcon color="secondary"/> Name: <b>{this.state.user.name}</b></p>
                                 <p><WcIcon color="secondary"/> Gender: {this.state.user.gender}</p>
                                 <p><SportsSoccerIcon color="secondary"/> Hobbies: {this.state.user.hobbies}!</p>
-                                {/* <h3> This is the profile</h3>
-                                <h3>of {this.state.user.username}</h3>
-                                <p>But their real name is <b>{this.state.user.name}</b>,</p>
-                                <p>and they are a {this.state.user.gender} person.</p>
-                                <p>They really love {this.state.user.hobbies}!</p> */}
                             </div>
                         </>
                     }
