@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import './style/call.css'
+import { styled } from '@mui/material/styles';
+import SaveIcon from '@mui/icons-material/Save';
 
 class AddCall extends Component {
   state = { 
@@ -37,6 +41,9 @@ class AddCall extends Component {
 
 
   render(){
+    const Input = styled('input')({
+      display: 'none',
+    });
     return(
       <div>
         <h3>Make some time to care for each other</h3>
@@ -47,7 +54,12 @@ class AddCall extends Component {
           <input type="datetime-local" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
           <label>Duration:</label>
           <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
-          <input type="submit" value="Submit" />
+          <label htmlFor="contained-button-file">
+            <Input id="contained-button-file" type="submit" value="Submit"/>
+            <Button className="button" variant="contained" color="secondary" component="span">
+              Submit
+            </Button>
+          </label>
         </form>
       </div>
     )
