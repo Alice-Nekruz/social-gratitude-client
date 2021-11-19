@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import './style/call.css'
 
 class EditCall extends Component {
   state = {
@@ -42,9 +44,9 @@ class EditCall extends Component {
     return (
       <div>
         {!this.state.isToggle &&
-        <button onClick={this.handleClick}>
-           Edit
-        </button>}
+          <Button className="edit-button" onClick={this.handleClick} variant="contained" color="secondary">
+            Edit
+          </Button>}
           {this.state.isToggle &&
                   <form onSubmit={this.handleFormSubmit}>
           <label>Topic:</label>

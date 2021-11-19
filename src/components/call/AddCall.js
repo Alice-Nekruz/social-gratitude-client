@@ -40,12 +40,12 @@ class AddCall extends Component {
     return(
       <div>
         <h3>Make some time to care for each other</h3>
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="form" onSubmit={this.handleFormSubmit}>
           <label>Topic:</label>
           <input type="text" name="topic" value={this.state.topic} onChange={e => this.handleChange(e)} />
           <label>Date:</label>
           <input type="datetime-local" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
-          <label>amountOfTime:</label>
+          <label>Duration:</label>
           <input type="number" name="amountOfTime" value={this.state.amountOfTime} onChange={e => this.handleChange(e)} />
           <input type="submit" value="Submit" />
         </form>

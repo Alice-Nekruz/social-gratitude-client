@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-
+import './style/call.css'
+import Button from '@mui/material/Button';
 
 
 class ListOfCalls extends Component {
@@ -8,23 +9,28 @@ class ListOfCalls extends Component {
 
     render() {
         return (
-            <div>
+            <div className="call-list">
                 <h3>Here you can find all the calls you scheduled</h3>
-                {this.props.listOfCallsFromState.map(calls => { 
-                    if(calls.owner === this.props.userDetails){
+                <div className="call-list-inside">
+                    {this.props.listOfCallsFromState.map(calls => { 
+                        if(calls.owner === this.props.userDetails){
 
-                        return (
-                            <div className="callContainer">
-                                <div key={calls._id}>
-                                    <h3>{calls.topic}</h3> 
-                                    <p>{calls._id}</p> 
+                            return (
+                                <div className="callContainer">
+                                    <div key={calls._id}>
+                                        <h3>{calls.topic}</h3> 
+                                        <p>{calls.date}</p> 
+                                        <span>{calls.amountOfTime} hour</span>
+                                    </div>
+                                    <Button variant="contained" color="secondary">
+                                        <Link className="text-details" to={`/call-details/${calls._id}`}>Details</Link>
+                                    </Button>
                                 </div>
-                                <Link to={`/call-details/${calls._id}`}>Details</Link>
-                            </div>
-                        )
-                    } 
-                    
-                })}
+                            )
+                        } 
+                        
+                    })}
+                </div>
             </div>
         )
     }
