@@ -58,10 +58,6 @@
     background-color: rgb(105, 88, 182);
     width: 100px;
     height: 25px;
-    /* font-weight: bold;
-    color: white; */
-    /* border-radius: 10px; */
-
 }
 
 .feed-container{
@@ -72,7 +68,7 @@
 
 .listOfPosts{
     background-color: rgb(255, 255, 255);
-    height: 100%;
+    max-height: 100%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -85,10 +81,17 @@
     margin: 20px 0px;
 }
 
+.postoflist-info{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+}
+
 .listOfPosts img{
-    max-height: 40vh;
-    max-width: 50vw;
-    margin: 15px;
+    max-height: 400px;
+    max-width: 100%;
+    margin: 10px 0px;
 }
 
 .side-profile{
@@ -100,6 +103,7 @@
     justify-content: flex-start;
     box-shadow: 0px 0px 5px rgb(189, 187, 187);
     border-radius: 5px;
+    align-items: center;
 }
 
 .side-profile img{
@@ -110,6 +114,7 @@
     border-radius: 100%;
 }
 
+
 .friendList{
     background-color: blanchedalmond;
     height: 50vh;
@@ -118,8 +123,83 @@
     flex-direction: column;
 }
 
+.text-link-name {
+    color: black;
+    font-weight: bolder;
+    text-decoration: inherit;
+    margin: 10px 0px 3px;
+    max-width: 100px;
+    font-size: 18px;
+}
+
 .text-link {
     color: rgb(73, 73, 73);
     text-decoration: inherit;
-    margin: 5px 0px;
+    margin: 3px 0px 3px;
+    max-width: 100px;
+    font-size: 13px;
+}
+
+.profile-button{
+    font-size: 5px;
+    max-width: 120px;
+    max-height: 30px;
+}
+
+.no-text-decor{
+    text-decoration: none;
+}
+
+.post-buttons {
+    width: 250px;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.profile-img{
+    height: 100%;
+}
+
+.profile-img img{
+    height: 40px;
+    width: 40px;   
+    background-color: rgb(168, 168, 168);
+    margin: 10px 10px 20px;
+    border-radius: 100%;
+}
+.post-text{
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+    font-weight: bolder;
+}
+
+.postlist-profileimg-name{
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+    width: 120px;
+    height: 60px;
+    align-content: center;
+    left: 0px;
+    margin: 10px 10px 0px;
+
+}
+
+.post-title-text{
+    display: flex;
+    text-decoration: none;
+    margin-left: 20px;
+    color: rgb(31, 31, 31);
+    font-size: 15px;
+}
+
+.profile-img-post img{
+    height: 40px;
+    width: 40px;   
+    background-color: rgb(168, 168, 168);
+    margin: 10px 10px;
+    border-radius: 100%;
 }

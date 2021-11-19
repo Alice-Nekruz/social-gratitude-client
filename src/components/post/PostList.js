@@ -4,6 +4,8 @@ import './style/postList.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import mypic from './style/mypic.png'
+import {Button} from '@mui/material'
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 
 import AddPost from './AddPost'; // <== !!!
@@ -49,25 +51,34 @@ class PostList extends Component {
           <div className="feed-container">
             
             <div className="side-profile">
-              <div className='profile-img'>{<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
-              <Link to={`/my-profile/${this.props.getUser?._id}`}>Visit My Profile</Link>
-              <div className='text-link'>Username: {this.props.getUser?.username}</div>
+              <div>{<img src={this.props.getUser?.imageUrl} alt="sd"/>}</div>
+              <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
+              <div className='text-link-name'>{this.props.getUser?.name}</div>
+              <div className='text-link'>{this.props.getUser?.gender}</div>
+              <div className='text-link'>{this.props.getUser?.hobbies}</div>
             </div> 
             
             <div>
               <AddPost getData={() => this.getAllPosts()}/>
 
               <div >
-              { this.state.listOfPosts.reverse().map( posts => {
-                  return (
-                  <div className="listOfPosts" key={posts._id}>
-                      <Link to={`/my-profile/${posts.owner._id}`}>{posts.owner.username}</Link>
-                      <h3>{posts.title}</h3>
-                      <p>{posts.text}</p>
-                      <img src={posts.imageUrl} alt="" />
-                  </div>
+                { this.state.listOfPosts.reverse().map( posts => {
+                    return (
+                    <div className="listOfPosts" key={posts._id}>
+                        <div className="postoflist-info">
+                            <div className="postlist-profileimg-name">
+                              <div className='profile-img'>{<img src={posts.owner.imageUrl} alt="photo"/>}</div>
+                              <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>{posts.owner.username}</Link>
+                            </div>
+                            <div class="post-title-text">
+                              <h4>To {posts.title}...</h4>
+                              <p> {posts.text}</p>
+                            </div>  
+                        </div>  
+                        <img src={posts.imageUrl} alt="" />
+                    </div>
                   )})
-              }
+                }
               </div>
             </div>
            
