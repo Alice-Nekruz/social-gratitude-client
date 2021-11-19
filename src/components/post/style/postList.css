@@ -135,7 +135,7 @@
 }
 
 .text-link-name {
-    color: black;
+    color: rgb(110, 0, 110);
     font-weight: bolder;
     text-decoration: inherit;
     margin: 10px 0px 3px;
