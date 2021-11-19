@@ -146,7 +146,7 @@ class Register extends React.Component {
                                 id="outlined-required"
                                 name="gender"
                                 type="text"
-                                label="I am identified as..."
+                                label="I identify as..."
                                 defaultValue="username World"
                                 value={this.state.gender} 
                                 onChange={this.handleChange}
@@ -169,15 +169,14 @@ class Register extends React.Component {
                             <PhotoCamera/>Upload
                             </Button>
                         </label>
-                        
-
-                        <label htmlFor="contained-button-file">
-                            <Input id="contained-button-file" type="submit" value="Submit"/>
+                    
+                        <label>
+                            <Input type="submit" value="Submit"/>
                             <Button className="button" variant="outlined" color="secondary" component="span">
                                 Register
                             </Button>
+                            {this.state.isSubmitted && <Redirect to="/posts"/>}
                         </label>
-                        {this.state.isSubmitted && <Redirect to="/posts"/>}
                     </div>
 
                 <p>
