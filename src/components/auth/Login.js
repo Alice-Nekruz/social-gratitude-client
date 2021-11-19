@@ -44,7 +44,7 @@ export default class Login extends Component {
           });
         return (
            <div className="login-page">
-            <div className="login-container">
+            <div className="login-container-login">
                 <Box
                 component="form"
                 sx={{
@@ -53,7 +53,7 @@ export default class Login extends Component {
                 noValidate
                 autoComplete="off"
                 onSubmit={this.handleFormSubmit}
-            >
+                >
                     <h2>Login:</h2>
                         <TextField
                             required
@@ -75,7 +75,7 @@ export default class Login extends Component {
                         />
 
                     <div>
-                        <label htmlFor="contained-button-file">
+                    <label htmlFor="contained-button-file">
                         <Input id="contained-button-file" type="submit" value="Submit"/>
                         <Button className="button" variant="outlined" color="secondary" component="span">
                              Login

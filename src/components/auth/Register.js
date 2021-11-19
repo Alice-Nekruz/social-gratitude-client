@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import authService from "../../services/auth-services";
 import { Redirect } from 'react-router';
 import imgService from '../../api/service';
+import './auth.style/style.css';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
 
 
 class Register extends React.Component {
@@ -84,67 +91,101 @@ class Register extends React.Component {
 
 
     render() {
+        const Input = styled('input')({
+            display: 'none',
+          });
+
         return (
-            <div>
-                <form onSubmit={this.handleFormSubmit}>
-                    <label>
-                        Username:
-                        <input
-                            type="text"
+            <div className="login-page">
+            <div className="login-container-register">
+                <Box
+                component="form"
+                sx={{
+                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                onSubmit={this.handleFormSubmit}
+                >
+
+                    <h2>Register</h2>
+                        <TextField
+                            required
+                            id="outlined-required"
                             name="username"
-                            value={this.state.username}
+                            label="Required"
+                            defaultValue="username World"
+                            value={this.state.username} 
                             onChange={this.handleChange}
                         />
-                    </label>
 
-                    <label>
-                        Password:
-                        <input
-                            type="password"
+                        <TextField
+                            required
+                            id="outlined-password-input"
                             name="password"
+                            label="Password"
+                            type="password"
                             value={this.state.password}
                             onChange={this.handleChange}
+                            autoComplete="current-password"
                         />
-                    </label>
-                    <label>
-                        Surname:
-                        <input
-                            type="text"
+
+                        <TextField
+                            required
+                            id="outlined-required"
                             name="name"
-                            value={this.state.name}
+                            type="text"
+                            label="My name is..."
+                            defaultValue="username World"
+                            value={this.state.name} 
                             onChange={ e => this.handleChange(e)}
                         />
-                    </label>
-                    <label>
-                        I identify as:
-                        <input
-                            type="text"
-                            name="gender"
-                            value={this.state.gender}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        My hobbies:
-                        <input
-                            type="text"
-                            name="hobbies"
-                            value={this.state.hobbies}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    
-                    <input type="file" onChange={(e) => this.handleFileUpload(e)}/>
+                        
+                            
+                            <TextField
+                                id="outlined-required"
+                                name="name"
+                                type="text"
+                                label="My hobbies are..."
+                                defaultValue="username World"
+                                value={this.state.gender} 
+                                onChange={ e => this.handleChange(e)}
+                            />
+                            
+                            <TextField
+                                id="outlined-required"
+                                name="name"
+                                type="text"
+                                label="My hobbies are..."
+                                defaultValue="username World"
+                                value={this.state.hobbies} 
+                                onChange={ e => this.handleChange(e)}
+                            />
 
-                    <button type="submit"> Register </button>
-                </form>
-                    {this.state.isSubmitted && <Redirect to="/posts"/>}
+                    <div className="register-photo">
+                        <label htmlFor="contained-button-file">
+                            <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => this.handleFileUpload(e)}/>
+                            <Button className="button" variant="outlined" color="secondary" component="span">
+                            <PhotoCamera/>Upload
+                            </Button>
+                        </label>
+                        
+
+                        <label htmlFor="contained-button-file">
+                            <Input id="contained-button-file" type="submit" value="Submit"/>
+                            <Button className="button" variant="outlined" color="secondary" component="span">
+                                Register
+                            </Button>
+                        </label>
+                        {this.state.isSubmitted && <Redirect to="/posts"/>}
+                    </div>
 
                 <p>
                     Already have an account?
                     <Link to={"/"}> Login</Link>
                 </p>
-                
+                </Box>
+            </div>
             </div>
         )
     }
