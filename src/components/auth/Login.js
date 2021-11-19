@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import './auth.style/style.css';
 import authService from '../../services/auth-services';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { Route } from 'react-router';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 
 export default class Login extends Component {
     constructor(props) {
@@ -34,29 +39,57 @@ export default class Login extends Component {
     };
 
     render() {
+        const Input = styled('input')({
+            display: 'none',
+          });
         return (
-            <div>
-                <h2>Login:</h2>
-                <form onSubmit={this.handleFormSubmit}>
-                    <label>
-                        Username:
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+           <div className="login-page">
+            <div className="login-container">
+                <Box
+                component="form"
+                sx={{
+                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                onSubmit={this.handleFormSubmit}
+            >
+                    <h2>Login:</h2>
+                        <TextField
+                            required
+                            id="outlined-required"
+                            name="username"
+                            label="Required"
+                            defaultValue="username World"
+                            value={this.state.username} onChange={this.handleChange}
+                        />
+
+                        <TextField
+                            id="outlined-password-input"
+                            name="password"
+                            label="Password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            autoComplete="current-password"
+                        />
+
+                    <div>
+                        <label htmlFor="contained-button-file">
+                        <Input id="contained-button-file" type="submit" value="Submit"/>
+                        <Button className="button" variant="outlined" color="secondary" component="span">
+                             Login
+                        </Button>
                     </label>
-
-                    <label>
-                        Password:
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    </label>
-
-                    <button type="submit"> Login </button>
-                </form>
-                {this.state.isSubmitted && <Redirect to="/posts"/>}
-
-                <p>
-                    Don't have account?
-                    <Link to={'/register'}> Register</Link>
-                </p>
+                        {this.state.isSubmitted && <Redirect to="/posts"/>}
+                    </div>
+                    <p>
+                        Don't have account?
+                        <Link to={'/register'}> Register</Link>
+                    </p>
+                </Box>
             </div>
+        </div>
         );
     }
 }

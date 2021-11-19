@@ -75,7 +75,7 @@ class PostList extends Component {
                             <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}><div className='profile-img'>{<img src={posts.owner.imageUrl} alt="photo"/>}</div></Link>
                               <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>{posts.owner.name}</Link>
                             </div>
-                            <div class="post-title-text">
+                            <div className="post-title-text">
                               <h4>To {posts.title}...</h4>
                               <p> {posts.text}</p>
                             </div>  
