@@ -39,9 +39,12 @@ class CallDetails extends Component {
     const { params } = this.props.match;
     axios.delete(`${process.env.REACT_APP_API_URL}/delete-call/${params.callid}`, { withCredentials: true })
         .then(() => {
-            this.props.history.push(`/my-profile/${this.props.getUser?._id}`); // !!!         
+          alert("Your call has successfully been removed")
+          this.props.history.push(`/my-profile/${this.props.getUser?._id}`);     
         })
         .catch((err) => {
+          alert("There was a problem deleting your call")
+          console.log(err)
         })
 }
 
