@@ -82,14 +82,14 @@ class PostList extends Component {
                               <div className='profile-img'>
                                 {this.props.getUser?.imageUrl ?
                                 <img src={posts.owner.imageUrl} alt="photo" />
-                                  : <img src={defaultImg} alt="photo" />
+                                  : <img src={defaultImg} alt="photo-avatar" />
                               }
                               </div>
                             </Link>
                               <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>{posts.owner.name}</Link>
                             </div>
                             <div className="post-title-text">
-                              <h4>To {posts.title}...</h4>
+                              <h4>{posts.title}...</h4>
                               <p> {posts.text}</p>
                             </div>  
                         </div>  
