@@ -36,6 +36,8 @@ It feels good to acknowledge the positive things as well as for people around us
 <br>
 
 ## Important links
+**Server repository**: https://github.com/Alice-Nekruz/social-gratitude-server
+
 **Github Nekruz**: https://github.com/nekruza
 <br>**Github Alice**: https://github.com/AliceXix
 
@@ -47,4 +49,5 @@ It feels good to acknowledge the positive things as well as for people around us
 
 <br>
 <br>
+
 *Let's make our society more grateful again.*
