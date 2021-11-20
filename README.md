@@ -44,7 +44,7 @@ It feels good to acknowledge the positive things as well as for people around us
 **Presentation**: https://docs.google.com/presentation/d/1BTXJR-17mKv1_E1hEZR0pah0JrLDgr8RQSE57l1TvIs/edit?usp=sharing
 <br>**Documentation**: https://notch-climb-686.notion.site/Social-gratitude-1bd2c2aacf624a77bf72040b12676e60
 
-**Web-application**: https://social-gratitude.netlify.app/posts
+**Web-application**: https://social-gratitude.netlify.app
 
 
 <br>
