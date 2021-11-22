@@ -172,7 +172,7 @@ class Register extends React.Component {
                     
                         <label>
                             <Input type="submit" value="Submit"/>
-                            <Button className="button" variant="outlined" color="secondary" component="span">
+                            <Button className="button" variant="contained" color="secondary" component="span">
                                 Register
                             </Button>
                             {this.state.isSubmitted && <Redirect to="/posts"/>}

@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import Logophoto from "./auth.style/Social-Gratitude-logo.png"
 
 export default class Login extends Component {
     constructor(props) {
@@ -43,7 +44,13 @@ export default class Login extends Component {
             display: 'none',
           });
         return (
+            
            <div className="login-page">
+
+            {/* <div class="login-photo">
+                        <img src={Logophoto} alt="" />
+                    </div>     */}
+            
             <div className="login-container-login">
                 <Box
                 component="form"
@@ -53,18 +60,21 @@ export default class Login extends Component {
                 noValidate
                 autoComplete="off"
                 onSubmit={this.handleFormSubmit}
-                >
-                    <h2>Login:</h2>
+                >   
+                    
+                    <h2>Welcome back!</h2>
+                    <p>Let's spread gratitude around the world!</p>
                         <TextField
                             required
                             id="outlined-required"
                             name="username"
-                            label="Required"
+                            label="Username"
                             defaultValue="username World"
                             value={this.state.username} onChange={this.handleChange}
                         />
 
                         <TextField
+                            required
                             id="outlined-password-input"
                             name="password"
                             label="Password"
@@ -77,7 +87,7 @@ export default class Login extends Component {
                     <div>
                     <label htmlFor="contained-button-file">
                         <Input id="contained-button-file" type="submit" value="Submit"/>
-                        <Button className="button" variant="outlined" color="secondary" component="span">
+                        <Button className="button" variant="contained" color="secondary" component="span">
                              Login
                         </Button>
                     </label>
