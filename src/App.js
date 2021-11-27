@@ -10,6 +10,7 @@ import CallDetails from './components/call/Calldetails';
 import authService from './services/auth-services';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { Redirect } from 'react-router';
+import FriendList from './components/friendsList/FriendsList';
 
 
 
@@ -72,6 +73,7 @@ export default class App extends React.Component {
           <ProtectedRoute user={this.state.user} exact path="/posts" component={PostList} />
           <ProtectedRoute user={this.state.user} exact path="/my-profile/:id" component={Profile} />
           <ProtectedRoute user={this.state.user} exact path="/call-details/:callid" component={CallDetails} />
+          <Route exact path='/friends' component={FriendList} />
 
           <Route exact path="/" render={props => {
             if(this.state?.user){

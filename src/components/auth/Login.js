@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import Logophoto from "./auth.style/Social-Gratitude-logo.png"
+// import Logophoto from "./auth.style/Social-Gratitude-logo.png"
 
 export default class Login extends Component {
     constructor(props) {

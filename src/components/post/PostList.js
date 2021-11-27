@@ -66,6 +66,7 @@ class PostList extends Component {
                 <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
                 <div className='text-link'><WcIcon/>{this.props.getUser?.gender}</div>
                 <div className='text-link'><SportsSoccerIcon/>{this.props.getUser?.hobbies}</div>
+                <div className="friendsList"><Link to="/friends">Friends</Link></div>
               </div>
             </div> 
             
