@@ -19,7 +19,7 @@ export default class Navbar extends Component {
 
         if (isLoggedIn) {
             return (
-                <nav className="nav-style">
+                <nav className="nav-style responsive-div-navbar">
                         <div className="logo"><Link className="logo-text" to={'/posts'}><img src={logoPic} alt="logo pic"/>
 </Link></div>
                         <div className="welcome">Let's spread gratitude into the world!</div>

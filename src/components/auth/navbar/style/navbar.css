@@ -34,3 +34,10 @@
     color: white;
     font-weight: bolder;
   }
+
+  @media (min-width: 60px) and (max-width: 650px) {
+    .responsive-div-navbar {
+      /* background-color: green; */
+      font-size: 0px;
+    }
+}

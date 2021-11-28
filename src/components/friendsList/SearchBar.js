@@ -1,4 +1,7 @@
 import React from "react";
+import './friends.style.css' 
+
+
 
 class SearchBar extends React.Component {
   handleChange = (event) => {
@@ -6,14 +9,14 @@ class SearchBar extends React.Component {
   };
 
   render() {
+    
     return (
       <div className="search-bar">
         <label>
-          Search friends by name:
           <input
             type="text"
-            name="searchInput"
-            placeholder="Search..."
+            name="searchInput" 
+            placeholder= "Search friends..."
             onChange={this.handleChange}
           />
         </label>
