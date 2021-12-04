@@ -10,7 +10,7 @@
 
 .user{
     background-color: white;
-    min-height: 280px;
+    min-height: 340px;
     width: 180px;
     display: flex;
     flex-direction: column;
@@ -22,11 +22,27 @@
 
 }
 
-.user img{
+
+.side-profile-photo{
+    position: relative;
+    height: 45%; 
+    width: 100%;
+}
+
+.side-background{
+    width: 100%;
+}
+
+.main-profile-pic{
     height: 6rem;
-    width: 6rem;
+    width: 6rem;  
+    background-color: rgb(231, 231, 231);
     margin: 10px 0px;
     border-radius: 100%;
+    position: absolute;
+    top: 24px;
+    left: 24%;
+    
 }
 
 

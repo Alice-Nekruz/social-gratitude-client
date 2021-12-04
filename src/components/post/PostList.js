@@ -10,6 +10,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import WcIcon from '@mui/icons-material/Wc';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import defaultImg from '../../img/default-image-profile.png'
+import backgroundPhoto from '../../photos/Background_photo.png'
 
 
 import AddPost from './AddPost'; // <== !!!
@@ -55,10 +56,11 @@ class PostList extends Component {
           <div className="feed-container">
             
             <div className="side-profile">
-                <div>
+                <div className="side-profile-photo">
+                    <img className="side-background" src={backgroundPhoto} alt="" />
                     {this.props.getUser?.imageUrl ?
-                      <img src={this.props.getUser?.imageUrl} alt="sd"/> :
-                    <img src={defaultImg} alt="sd" />
+                      <img src={this.props.getUser?.imageUrl} className="main-profile-pic-post" alt="sd"/> :
+                      <img src={defaultImg} alt="sd" />
                     }
                 </div>
                 <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>

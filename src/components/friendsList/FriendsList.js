@@ -81,11 +81,12 @@ class FriendList extends React.Component {
                     {filteredUsers.map(user => {
                         return(
                             <div className="user">
-                                <div>
-                                    {user.imageUrl ?
-                                    <img src={user.imageUrl} alt="sd"/> :
-                                    <img src={defaultImg} alt="sd" />
-                                }
+                                <div className="side-profile-photo">
+                                    <img className="side-background" src={backgroundPhoto} alt="" />
+                                        {user.imageUrl ?
+                                        <img src={user.imageUrl} className="main-profile-pic" alt="sd"/> :
+                                        <img src={defaultImg} className="main-profile-pic" alt="sd" />
+                                    }
                                 </div>
                                 <div className="profile-info-container">
                                     <Link className="no-text-decor" to={`my-profile/${user._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>

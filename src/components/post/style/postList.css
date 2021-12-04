@@ -96,8 +96,8 @@
 
 .side-profile{
     background-color: white;
-    height: 50vh;
-    width: 15vw;
+    height: 350px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -110,12 +110,24 @@
     background-repeat: no-repeat; */
 }
 
-.side-profile img{
+.side-profile-photo{
+    position: relative;
+    height: 45%; 
+}
+
+.side-background{
+    width: 100%;
+}
+
+.main-profile-pic-post{
     height: 100px;
     width: 100px;   
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(255, 255, 255);
     margin: 10px auto 20px;
     border-radius: 100%;
+    position: absolute;
+    top: 40px;
+    left: 75px;
     
 }
 
