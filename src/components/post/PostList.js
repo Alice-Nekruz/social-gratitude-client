@@ -55,19 +55,19 @@ class PostList extends Component {
           <div className="feed-container">
             
             <div className="side-profile">
-            <div>
-                {this.props.getUser?.imageUrl ?
-                  <img src={this.props.getUser?.imageUrl} alt="sd"/> :
-                <img src={defaultImg} alt="sd" />
-                }
-            </div>
-              <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
-              <div className="profile-info-container">
-                <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
-                <div className='text-link'><WcIcon/>{this.props.getUser?.gender}</div>
-                <div className='text-link'><SportsSoccerIcon/>{this.props.getUser?.hobbies}</div>
-                <div className="friendsList"><Link to="/friends">Friends</Link></div>
-              </div>
+                <div>
+                    {this.props.getUser?.imageUrl ?
+                      <img src={this.props.getUser?.imageUrl} alt="sd"/> :
+                    <img src={defaultImg} alt="sd" />
+                    }
+                </div>
+                <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
+                <div className="profile-info-container">
+                  <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
+                  <div className='text-link'><WcIcon/>{this.props.getUser?.gender}</div>
+                  <div className='text-link'><SportsSoccerIcon/>{this.props.getUser?.hobbies}</div>
+                  <div className="friendsList"><Link to="/friends">Friends</Link></div>
+                </div>
             </div> 
             
             <div>

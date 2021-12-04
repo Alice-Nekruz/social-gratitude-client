@@ -115,30 +115,55 @@
       /* background-color: green; */
       display: flex;
       flex-direction: column;
-      height: 140px;
+      height: 70px;
       justify-content: space-around;
+      width: 100%;
     }
 }
 
 @media (min-width: 60px) and (max-width: 500px) {
     .responsive-div-filter {
-      /* background-color: yellow; */
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-around;
-      height: 100px;
-      width: 30vw;
-      margin: 10px auto 0px;
+      height: 50px;
+      width: 100vw;
+      margin: auto;
       justify-content: space-around;
     }
-}
 
-@media (min-width: 60px) and (max-width: 500px) {
+    .responsive-div-filter Button{
+        width: 100vw;
+    }
+    .profile-button{
+        width: 100%;
+    }
+
+    .searchbar{
+        width: 100vw;
+    }
+    
+    .search-bar input{
+        width: 95vw;
+        margin: auto;
+
+    }
+
+    .friend-list{
+        display: flex;
+        width: 100vw;
+        margin: 10px auto;
+        padding: 3px;
+    }
     .responsive-div-filter Button {
       /* background-color: yellow; */
       height: 100px;
       width: 200px;
       margin: auto;
       margin: 5px;
+    }
+
+    .user{
+        width: 45vw;
     }
 }
