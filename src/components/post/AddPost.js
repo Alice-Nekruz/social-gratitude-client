@@ -84,9 +84,9 @@ class AddPost extends Component {
       <div className="addPost">
         {this.state.isUploading && <p className='error-msg'>Please wait, the image is being uploaded...</p>}
         <form className="addPostFrom" onSubmit={this.handleFormSubmit}>
-          {/* <label>
+          <label>
               <input className="title" type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)} placeholder="To..."/>
-          </label> */}
+          </label>
           <label>
               <textarea className="text" name="text" value={this.state.text} onChange={ e => this.handleChange(e)} placeholder="Write your post here"/>
           </label>
