@@ -52,7 +52,7 @@ class PostList extends Component {
   render(){
     console.log("imageurl.....", this.props.getUser?.imageUrl )
     return(
-      <div className="feed">
+      <div className="feed responsive-div-postlist">
           <div className="feed-container">
             
             <div className="side-profile">
@@ -72,10 +72,26 @@ class PostList extends Component {
                 </div>
             </div> 
             
+            <div className="profile-mobile">
+                <div className="side-profile-photo-mobile">
+                    <img className="side-background-m" src={backgroundPhoto} alt="" />
+                    <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}>
+                        {this.props.getUser?.imageUrl ?
+                          <img src={this.props.getUser?.imageUrl} className="main-profile-pic-mobile" alt="sd"/> :
+                          <img src={defaultImg} alt="sd" />
+                        }
+                    </Link>
+                    <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}>
+                        <div className='text-link-name-mobile'> <PersonIcon />{this.props.getUser?.name}</div>
+                    </Link>    
+                </div>
+
+            </div>
+            
             <div>
               <AddPost getData={() => this.getAllPosts()}/>
 
-              <div >
+              <div className="post-container">
                 { this.state.listOfPosts.reverse().map( posts => {
                     return (
                     <div className="listOfPosts" key={posts._id}>
@@ -92,7 +108,7 @@ class PostList extends Component {
                               <Link className="text-link-name" to={`/my-profile/${posts.owner._id}`}>{posts.owner.name}</Link>
                             </div>
                             <div className="post-title-text">
-                              <h4>{posts.title}...</h4>
+                              {/* <h4>{posts.title}...</h4> */}
                               <p> {posts.text}</p>
                             </div>  
                         </div>  

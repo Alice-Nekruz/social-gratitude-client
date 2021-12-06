@@ -11,46 +11,55 @@
 
 .addPost{
     height: 30vh;
-    width: 500px;
+    width: 40vw;
+    max-width: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0 0 15px;
 }
+
+.addPost textarea{
+    height: 18vh;
+    width: 35vw;
+    max-width: 850px;
+}    
 
 .addPostFrom{
     background-color: rgb(255, 255, 255);
     height: 30vh;
-    width: 500px;
+    width: 40vw;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin: 0;
     border-radius: 10px;
-    /* border: 0.5px solid rgb(199, 199, 199); */
     box-shadow: 0px 0px 5px rgb(189, 187, 187);
 
 }
 
 .title{
-    width: 350px;
+    width: 35vw;
+    max-width: 850px;
     height: 20px;
     text-align: center;
     padding: 5px 30px;
     border: none;
     border-radius: 3px;
-    background-color: rgb(201, 191, 216);
+    background-color: rgb(247, 242, 255);
 }
 
 .text{
-    width: 350px;
-    height: 20px;
+    width: 35vw;
+    max-width: 850px;
+    height: 60px;
     text-align: center;
     padding:  30px;
     border: none;
     border-radius: 3px;
-    background-color: rgb(201, 191, 216);
+    background-color: rgb(245, 240, 255);
 
 }
 
@@ -69,16 +78,23 @@
 .listOfPosts{
     background-color: rgb(255, 255, 255);
     max-height: 100%;
-    max-width: 500px;
+    width: 40vw;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0;
     border-radius: 5px;
     /* border: 0.5px solid rgb(199, 199, 199); */
     box-shadow: 0px 0px 10px rgb(189, 187, 187);
-    margin: 20px 0px;
+    margin: 10px 0px;
+}
+
+.post-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .postoflist-info{
@@ -89,14 +105,14 @@
 }
 
 .listOfPosts img{
-    max-height: 400px;
+    max-height: 600px;
     max-width: 100%;
     margin: 10px 0px;
 }
 
 .side-profile{
     background-color: white;
-    height: 350px;
+    height: 380px;
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -104,10 +120,6 @@
     box-shadow: 0px 0px 5px rgb(189, 187, 187);
     border-radius: 5px;
     align-items: center;
-    /* background-image: url(./avatar.jpeg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat; */
 }
 
 .side-profile-photo{
@@ -239,4 +251,128 @@
     background-color: rgb(168, 168, 168);
     margin: 10px 10px;
     border-radius: 100%;
+}
+
+
+.my-profile-mobile, .main-profile-pic-mobile, .side-profile-mobile, .side-profile-photo-mobile, .profile-button-mobile, .side-background-m {
+    width: 0;
+}
+
+.text-link-name-mobile{
+    display: none;
+}
+
+
+@media (min-width: 60px) and (max-width: 800px) {
+    .responsive-div-postlist {
+      /* background-color: green; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .feed-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 90%;
+      margin: auto;
+    }
+
+    /* Post */
+
+    .addPost{
+        width: 100vw;
+        margin: 10px 0px 10px;
+        /* background-color: blueviolet; */
+        height: 160px;
+    }
+
+    .addPostFrom{
+        width: 90vw;
+        /* background-color: burlywood; */
+        height: 150px;
+    }
+    
+    .addPost textarea{
+        width: 80vw;
+        height: 10vh;
+    } 
+
+    /* .title{
+        width: 80vw;
+    } */
+
+/* Side Profile */
+
+    .side-profile{
+        display: none;
+    }
+
+    .profile-mobile{
+        height: 170px;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-shadow: 0px 0px 5px rgb(189, 187, 187);
+        border-radius: 5px;
+        align-items: center;
+    }
+
+    .side-profile-photo-mobile{
+        position: relative;
+        height: 100%; 
+        width: 100%;
+    }
+
+    .side-background-m{
+        width: 100%;
+        height: 50%;
+        position: relative;
+    }
+
+    .main-profile-pic-mobile{
+        height: 85px;
+        width: 85px;   
+        margin: 10px auto 20px;
+        border-radius: 100%;
+        position: absolute;
+        left: 7%;
+        top: 20%;
+    }
+
+    
+    .text-link-name-mobile{
+        position: absolute;
+        left: 120px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: larger;
+        color: black;
+    }
+    
+    .listOfPosts{
+        max-height: 100%;
+        width: 90%;
+        max-width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: auto;
+        border-radius: 5px;
+        /* border: 0.5px solid rgb(199, 199, 199); */
+        box-shadow: 0px 0px 10px rgb(189, 187, 187);
+        margin: 5px 0px;
+    }
+
+    .friendList{
+        display: none;
+    }
+    
 }
