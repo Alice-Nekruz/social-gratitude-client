@@ -11,6 +11,7 @@ import authService from './services/auth-services';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { Redirect } from 'react-router';
 import FriendList from './components/friendsList/FriendsList';
+import Footer from './components/Footer.js';
 
 
 
@@ -93,6 +94,7 @@ export default class App extends React.Component {
 
 
         </Switch>
+        <Footer/>
   
       </div>
     );

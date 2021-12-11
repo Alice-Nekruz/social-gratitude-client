@@ -1,0 +1,30 @@
+.footer{
+    background-color: #8F57FF;
+    color: white;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px 15px;
+}
+
+.footer p{
+    text-align: start;
+}
+
+.no-text-decor{
+    text-decoration: none;
+}
+
+.footer Button {
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: 3px;
+}
+
+@media (max-width: 800px){
+    .footer{
+        height: 70px;
+    }
+}
