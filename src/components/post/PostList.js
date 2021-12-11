@@ -54,23 +54,24 @@ class PostList extends Component {
     return(
       <div className="feed responsive-div-postlist">
           <div className="feed-container">
-            
-            <div className="side-profile">
-                <div className="side-profile-photo">
-                    <img className="side-background" src={backgroundPhoto} alt="" />
-                    {this.props.getUser?.imageUrl ?
-                      <img src={this.props.getUser?.imageUrl} className="main-profile-pic-post" alt="sd"/> :
-                      <img src={defaultImg} alt="sd" />
-                    }
-                </div>
-                <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
-                <div className="profile-info-container">
-                  <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
-                  <div className='text-link'><WcIcon/>{this.props.getUser?.gender}</div>
-                  <div className='text-link'><SportsSoccerIcon/>{this.props.getUser?.hobbies}</div>
-                  <div className="friendsList"><Link to="/friends">Friends</Link></div>
-                </div>
-            </div> 
+          
+          <div className="profile-friendlist">
+              <div className="side-profile">
+                  <div className="side-profile-photo">
+                      <img className="side-background" src={backgroundPhoto} alt="" />
+                      {this.props.getUser?.imageUrl ?
+                        <img src={this.props.getUser?.imageUrl} className="main-profile-pic-post" alt="sd"/> :
+                        <img src={defaultImg} alt="sd" />
+                      }
+                  </div>
+                  <Link className="no-text-decor" to={`/my-profile/${this.props.getUser?._id}`}><Button className="profile-button" color="secondary" variant="outlined" type="submit"><AccountBoxIcon/>Profile</Button></Link>
+                  <div className="profile-info-container">
+                    <div className='text-link-name'> <PersonIcon />{this.props.getUser?.name}</div>
+                    <div className='text-link'><WcIcon/>{this.props.getUser?.gender}</div>
+                    <div className='text-link'><SportsSoccerIcon/>{this.props.getUser?.hobbies}</div>
+                  </div>
+              </div> 
+
             
             <div className="profile-mobile">
                 <div className="side-profile-photo-mobile">
@@ -87,6 +88,13 @@ class PostList extends Component {
                 </div>
 
             </div>
+
+            <Link className="no-text-decor" to="/friends"> 
+                      <div className="friendList-side"> 
+                          <Button variant="contained"> Search Friends </Button>
+                      </div>
+              </Link>
+              </div>
             
             <div>
               <AddPost getData={() => this.getAllPosts()}/>
@@ -119,9 +127,11 @@ class PostList extends Component {
               </div>
             </div>
            
-            <div className="friendList">
-              <h3>A grateful environment is a magnet </h3><h3>for miracles!</h3>
-            </div>
+                <Link className="no-text-decor" to="/friends"> 
+                    <div className="friendList"> 
+                        <Button variant="contained"> Search Friends </Button>
+                    </div>
+                </Link>
           </div>
       </div>
     )
