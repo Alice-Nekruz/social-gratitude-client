@@ -94,7 +94,7 @@ export default class App extends React.Component {
 
 
         </Switch>
-        <Footer/>
+        <Footer isLoggedIn={this.state.isLoggedIn} getCurrentUser={this.getCurrentUser}/>
   
       </div>
     );

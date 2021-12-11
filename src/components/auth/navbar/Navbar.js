@@ -3,9 +3,8 @@ import './style/navbar.css';
 import { Link } from 'react-router-dom';
 import authService from '../../../services/auth-services';
 import logoPic from './style/website.png'
-
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export default class Navbar extends Component {
     logoutUser = () => {
