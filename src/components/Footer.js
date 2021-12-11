@@ -8,7 +8,7 @@ export default class Footer extends Component {
         return (
             <div className="footer">
                 <p>Copyright Social-Gratitude, Inc. All rights reserved.</p>
-                <a className="no-text-decor" href="#"><Button color="primary" variant="contained"><ArrowUpwardIcon/></Button></a>
+                <a className="no-text-decor" href="#"><Button color="secondary" variant="contained"><ArrowUpwardIcon/></Button></a>
             </div>
         )
     }
