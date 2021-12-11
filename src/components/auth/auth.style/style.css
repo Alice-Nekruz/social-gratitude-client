@@ -15,8 +15,9 @@
     flex-direction: column;
     align-content: space-around;
     align-items: center;
-    max-width: 25vw;
-    max-height: 80vh;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
     /* max-width: 400px;
     min-width: 460px; */
     /* height: 300px; */
@@ -33,11 +34,10 @@
     flex-direction: row;
     align-content: space-around;
     align-items: center;
-    max-width: 400px;
-    min-width: 460px;
-    max-height: 80vh;
+    width: 400px;
+    height: 600px;
+    padding: 20px;
     margin: 10px;
-    padding: 10px;
     box-shadow: 0px 0px 5px rgb(189, 187, 187);
     border-radius: 10px;
 
@@ -71,4 +71,26 @@
     height: 50vh;
     border-radius: 5%;
 
+}
+
+@media (max-width: 800px){
+    .login-page{
+        width: 100vw;
+    }
+
+    .login-container-login {
+        width: 80vw;
+        height: 400px;
+        padding: 10px;
+    }
+
+    .login-container-register{
+        width: 80vw;
+        height: 600px;
+        padding: 10px;
+    }
+
+    .register-photo{
+        width: 80%;
+    }
 }
